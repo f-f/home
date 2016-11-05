@@ -1,0 +1,22 @@
+!#/bin/bash
+
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install msmtp msmtp-mta gnupg2 rlwrap curl wget xdotool javascriptcoregtk-4.0 libzip4
+
+# $1: name, $2: url
+curl-install () {
+  sudo bash -c "cd /usr/local/bin && curl -fsSLo $1 $2 && chmod 755 $1"
+}
+
+# Leiningen
+curl-install lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+lein
+
+# Boot
+curl-install boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh
+boot
+
+# Planck
+curl-install planck http://planck-repl.org/releases/2.0-alpha5-ubuntu-16.04/planck
