@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -e -o pipefail
+
+echo "Starting bootstrap!"
+
+echo "Installing packages..."
+./install
+
+echo "Creating dotfiles links in ~..."
+./make-links
+
+# Create some folders
+echo "Creating necessary folders..."
+mkdir -p ~/.tmp
+mkdir -p ~/.ssh
+
+# Decrypt ssh keys (!!)
+for FILE in ~/dotfiles/ssh/*.gpg; do
+  NEWKEY=~/.ssh/$(basename $FILE '.gpg')
+  if [ ! -f $NEWKEY ]; then
+    echo "Decrypting ssh key..."
+    gpg2 --no-tty -q --output $NEWKEY -d $FILE
+  fi
+done
+
+# Setup mta
+echo "Setting up SMTP MTA..."
+gpg2 --no-tty -q -d ~/mail/msmtp-password.gpg > ~/.tmp/mailpass
+echo "root: fabrizio@ferrai.io" >> /etc/aliases && newaliases
+
+# Setup SSH repo
+echo "Switching the repo over to SSH..."
+git remote set-url origin git@github.com:ff-/dotfiles.git
+
+echo "Done!"

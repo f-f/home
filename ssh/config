@@ -1,0 +1,12 @@
+Host augustus
+  Hostname augustus.ferrai.io
+  User root
+  Port 10000
+
+Host claudius
+  Hostname claudius.ferrai.io
+  User root
+  Port 10000
+
+Host *
+  ServerAliveInterval 30

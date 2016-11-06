@@ -1,3 +1,9 @@
 #!/bin/bash
 
-ln -sv ~/dotfiles/git/.gitconfig ~
+ln -sv ~/dotfiles/ssh/config       ~/.ssh/
+ln -sv ~/dotfiles/git/.gitconfig   ~
+ln -sv ~/dotfiles/bin              ~
+ln -sv ~/dotfiles/mail             ~
+ln -sv ~/dotfiles/mail/.msmtprc    ~
+
+sudo ln -sv ~/dotfiles/mail/.msmtprc /etc/msmtprc
