@@ -2,11 +2,16 @@ Host augustus
   Hostname augustus.ferrai.io
   User root
   Port 10000
+  IdentityFile ~/.ssh/augustus
 
 Host claudius
   Hostname claudius.ferrai.io
   User root
   Port 10000
+  IdentityFile ~/.ssh/claudius
+
+Host github.com
+  IdentityFile ~/.ssh/github
 
 Host *
   ServerAliveInterval 30
