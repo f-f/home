@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+## Better cd
+cl() {
+	cd $@
+	ls -la
+}
+alias c="cl"
+alias l="ls -la"
+
 # Upload a file on transfer.sh
 function transfer() {
   if [ $# -eq 0 ]; then
