@@ -9,3 +9,4 @@ alias rmil='redshift -l 45.58:9.27 -t 5500:3300 &'
 alias s='sudo pm-suspend'
 alias skype='firejail skype'
 alias studio='/opt/android-studio/bin/studio.sh'
+alias wget="wget -c" # Continue Interrupted downloads
