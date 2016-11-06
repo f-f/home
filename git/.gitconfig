@@ -1,5 +1,6 @@
 [user]
 	email = fabrizio.ferrai@gmail.com
 	name = Fabrizio Ferrai
+	signingkey = 34949D71
 [push]
 	default = simple
