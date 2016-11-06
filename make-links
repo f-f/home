@@ -1,9 +1,23 @@
 #!/bin/bash
 
+# Root config
+sudo ln -sv ~/dotfiles/mail/.msmtprc /etc/msmtprc
+
+# Zsh
+ln -sv ~/.zprezto/runcoms/zlogin   ~/.zlogin
+ln -sv ~/.zprezto/runcoms/zlogout  ~/.zlogout
+ln -sv ~/.zprezto/runcoms/zprofile ~/.zprofile
+ln -sv ~/.zprezto/runcoms/zshenv   ~/.zshenv
+
+ln -sv ~/dotfiles/zsh/.alias       ~
+ln -sv ~/dotfiles/zsh/.env         ~
+ln -sv ~/dotfiles/zsh/.functions   ~
+ln -sv ~/dotfiles/zsh/.zpreztorc   ~
+ln -sv ~/dotfiles/zsh/.zshrc       ~
+
+# All the others
 ln -sv ~/dotfiles/ssh/config       ~/.ssh/
 ln -sv ~/dotfiles/git/.gitconfig   ~
 ln -sv ~/dotfiles/bin              ~
 ln -sv ~/dotfiles/mail             ~
 ln -sv ~/dotfiles/mail/.msmtprc    ~
-
-sudo ln -sv ~/dotfiles/mail/.msmtprc /etc/msmtprc
