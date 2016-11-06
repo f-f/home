@@ -8,7 +8,7 @@ Config for Ubuntu 16. Should run with no issues on Debian and Ubuntu 14 - untest
 
 Requirements: `sudo apt install gnupg git`
 
-1. Download gpg keypair from `keybase.io/ff`, store in `keypair.gpg`
+1. Get the GPG key, put in `keypair.gpg`
 2. `gpg --allow-secret-key-import --import keypair.gpg`
 3. `rm keypair.gpg`
 4. `git clone https://github.com/ff-/dotfiles.git`
@@ -20,3 +20,4 @@ Requirements: `sudo apt install gnupg git`
 - https://github.com/webpro/dotfiles
 - https://github.com/thypon/dotconfig
 - https://github.com/skeeto/dotfiles
+- https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.188hq56fb
