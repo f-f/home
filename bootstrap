@@ -6,6 +6,7 @@ echo "Starting bootstrap!"
 
 # Create some folders
 echo "Creating some useful folders..."
+mkdir -p ~/.gnupg
 mkdir -p ~/.tmp
 mkdir -p ~/.ssh
 mkdir -p ~/code

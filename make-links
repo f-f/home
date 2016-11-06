@@ -18,6 +18,7 @@ ln -sv ~/dotfiles/zsh/.zshrc       ~
 # All the others
 ln -sv ~/dotfiles/ssh/config       ~/.ssh/
 ln -sv ~/dotfiles/git/.gitconfig   ~
+ln -sv ~/dotfiles/gpg/gpg.conf     ~/.gnupg/
 ln -sv ~/dotfiles/bin              ~
 ln -sv ~/dotfiles/mail             ~
 ln -sv ~/dotfiles/mail/.msmtprc    ~
