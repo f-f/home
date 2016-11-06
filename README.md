@@ -2,7 +2,7 @@
 
 My dotfiles, scripts and keys. Use at your own risk!
 
-Config for Ubuntu 16. Should run with no issues on Debian and Ubuntu 14 - untested though. In case you do please get in touch :)
+Config for Ubuntu 16.04 Xenial.
 
 ## Fast install
 
@@ -12,7 +12,8 @@ Requirements: `sudo apt install gnupg git`
 2. `gpg --allow-secret-key-import --import keypair.gpg`
 3. `rm keypair.gpg`
 4. `git clone https://github.com/ff-/dotfiles.git`
-5. `cd dotfiles && ./bootstrap`
+5. Most likely you'd like to do `visudo` and input `ff_ ALL=(ALL) NOPASSWD: ALL`
+6. `cd dotfiles && ./bootstrap`
 
 ## Inspiration
 
