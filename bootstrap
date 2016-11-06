@@ -4,25 +4,17 @@ set -e -o pipefail
 
 echo "Starting bootstrap!"
 
+# Create some folders
+echo "Creating some useful folders..."
+mkdir -p ~/.tmp
+mkdir -p ~/.ssh
+mkdir -p ~/code
+
 echo "Installing packages..."
 ./install
 
 echo "Creating dotfiles links in ~..."
 ./make-links
-
-# Create some folders
-echo "Creating necessary folders..."
-mkdir -p ~/.tmp
-mkdir -p ~/.ssh
-
-# Decrypt ssh keys (!!)
-for FILE in ~/dotfiles/ssh/*.gpg; do
-  NEWKEY=~/.ssh/$(basename $FILE '.gpg')
-  if [ ! -f $NEWKEY ]; then
-    echo "Decrypting ssh key..."
-    gpg2 --no-tty -q --output $NEWKEY -d $FILE
-  fi
-done
 
 # Setup mta
 echo "Setting up SMTP MTA..."
