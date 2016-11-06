@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+alias debup="sudo apt-get update && sudo apt-get upgrade"
+alias docker='sudo docker'
+alias hotp='htop'
+alias ovpnre='sudo service openvpn restart'
+alias rhel='redshift -l 60.1873124:24.8341119 -t 5500:2200 &'
+alias rmil='redshift -l 45.58:9.27 -t 5500:3300 &'
+alias s='sudo pm-suspend'
+alias skype='firejail skype'
+alias studio='/opt/android-studio/bin/studio.sh'
