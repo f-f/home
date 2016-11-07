@@ -6,6 +6,7 @@ echo "Starting bootstrap!"
 
 # Create some folders
 echo "Creating some useful folders..."
+mkdir -p ~/.fonts
 mkdir -p ~/.gnupg
 mkdir -p ~/.tmp
 mkdir -p ~/.ssh
@@ -19,12 +20,13 @@ echo "Creating dotfiles links in ~..."
 
 # Setup mta
 echo "Setting up SMTP MTA..."
-gpg2 --no-tty -q -d ~/mail/msmtp-password.gpg > ~/.tmp/mailpass
 echo "root: fabrizio@ferrai.io" >> /etc/aliases && newaliases
 
-# Decrypt Pushbullet token
-echo "Decrypting Pushbullet token..."
+# Decrypt stuff
+echo "Decrypting all the things..."
+gpg2 --no-tty -q -d ~/mail/msmtp-password.gpg > ~/.tmp/mailpass
 gpg2 --no-tty -q -d ~/dotfiles/cryptd/pushbullet-token.gpg > ~/.tmp/pb-token
+./bin/decrypt-fonts
 
 # Setup SSH repo
 echo "Switching the repo over to SSH..."

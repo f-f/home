@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tar czv -C ~/.fonts . | gpg --encrypt --output ~/dotfiles/cryptd/fonts.tar.gz.gpg
