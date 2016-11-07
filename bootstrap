@@ -22,6 +22,10 @@ echo "Setting up SMTP MTA..."
 gpg2 --no-tty -q -d ~/mail/msmtp-password.gpg > ~/.tmp/mailpass
 echo "root: fabrizio@ferrai.io" >> /etc/aliases && newaliases
 
+# Decrypt Pushbullet token
+echo "Decrypting Pushbullet token..."
+gpg2 --no-tty -q -d ~/dotfiles/cryptd/pushbullet-token.gpg > ~/.tmp/pb-token
+
 # Setup SSH repo
 echo "Switching the repo over to SSH..."
 git remote set-url origin git@github.com:ff-/dotfiles.git
