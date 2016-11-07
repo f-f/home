@@ -1,0 +1,42 @@
+"*":
+  Hydrogen:
+    grammarToKernel: "{\"python\":\"Python 3\"}"
+    kernelspec: "{\"kernelspecs\":{\"clojure\":{\"resources_dir\":\"/home/ff_/.ipython/kernels/clojure\",\"spec\":{\"language\":\"clojure\",\"display_name\":\"Clojure\",\"env\":{},\"argv\":[\"/home/ff_/.ipython/kernels/clojure/ipython-clojure\",\"{connection_file}\"]}},\"bash\":{\"resources_dir\":\"/home/ff_/.local/share/jupyter/kernels/bash\",\"spec\":{\"language\":\"bash\",\"display_name\":\"Bash\",\"env\":{\"PS1\":\"$\"},\"argv\":[\"/usr/bin/python\",\"-m\",\"bash_kernel\",\"-f\",\"{connection_file}\"]}},\"python3\":{\"resources_dir\":\"/usr/local/share/jupyter/kernels/python3\",\"spec\":{\"language\":\"python\",\"display_name\":\"Python 3\",\"env\":{},\"argv\":[\"/usr/bin/python3\",\"-m\",\"ipykernel\",\"-f\",\"{connection_file}\"]}},\"python2\":{\"resources_dir\":\"/usr/local/share/jupyter/kernels/python2\",\"spec\":{\"language\":\"python\",\"display_name\":\"Python 2\",\"env\":{},\"argv\":[\"/usr/bin/python\",\"-m\",\"ipykernel\",\"-f\",\"{connection_file}\"]}}}}"
+  "activate-power-mode":
+    particles:
+      size: {}
+      spawnCount: {}
+      totalCount: {}
+    screenShake: {}
+  "atom-ternjs": {}
+  "autocomplete-plus":
+    autoActivationDelay: 1
+  core:
+    disabledPackages: [
+      "activate-power-mode"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "nucleus-dark-ui"
+      "monokai"
+    ]
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "999e4d2c-5b2b-03b5-2edb-051fba36c89c"
+  "ide-haskell": {}
+  jshint:
+    supportLintingJsx: true
+  linter: {}
+  minimap: {}
+  "one-dark-ui": {}
+  "tool-bar":
+    iconSize: "32px"
+    position: "Right"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false

@@ -14,24 +14,28 @@ sudo apt update
 sudo apt install -y msmtp msmtp-mta gnupg2 rlwrap curl wget xdotool javascriptcoregtk-4.0 libzip4 atom zsh git autojump docker-engine default-jdk
 sudo apt upgrade -y
 
-# $1: name, $2: url
+# Curl installs
+## $1: name, $2: url
 curl-install () {
   sudo bash -c "cd /usr/local/bin && curl -fsSLo $1 $2 && chmod 755 $1"
 }
 
-# Leiningen
+## Leiningen
 curl-install lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 lein
 
-# Boot
+## Boot
 curl-install boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh
 boot
 
-# Planck
+## Planck
 curl-install planck http://planck-repl.org/releases/2.0-alpha5-ubuntu-16.04/planck
 
-# Prezto
+## Prezto
 git clone https://github.com/sorin-ionescu/prezto.git -o ~/.zprezto
 
+# Atom packages
+apm install --packages-file ~/dotfiles/atom/packages.list
 
 # TODO android studio
+# TODO pip install pushbullet
