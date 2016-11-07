@@ -17,8 +17,9 @@ Requirements: `sudo apt install gnupg git`
 
 ## Inspiration
 
-- https://github.com/mathiasbynens/dotfiles
-- https://github.com/webpro/dotfiles
-- https://github.com/thypon/dotconfig
-- https://github.com/skeeto/dotfiles
-- https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.188hq56fb
+[Some](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.188hq56fb)
+[links](https://github.com/mathiasbynens/dotfiles)
+[and](https://github.com/webpro/dotfiles)
+[repos](https://github.com/thypon/dotconfig)
+[that](https://github.com/skeeto/dotfiles)
+I found useful and inspiring.
