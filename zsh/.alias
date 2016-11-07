@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+alias d='sudo systemctl'
 alias debup="sudo apt-get update && sudo apt-get upgrade"
 alias docker='sudo docker'
 alias hotp='htop'
