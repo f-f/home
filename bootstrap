@@ -30,8 +30,4 @@ gpg2 --no-tty -q -d ~/dotfiles/cryptd/pushbullet-token.gpg > ~/.tmp/pb-token
 gpg2 --no-tty -q -d ~/dotfiles/cryptd/idea15.jar.gpg > ~/.tmp/idea15.jar
 ./bin/decrypt-fonts
 
-# Setup SSH repo
-echo "Switching the repo over to SSH..."
-git remote set-url origin git@github.com:ff-/dotfiles.git
-
 echo "Done!"
