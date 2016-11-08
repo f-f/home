@@ -30,4 +30,12 @@ gpg2 --no-tty -q -d ~/dotfiles/cryptd/pushbullet-token.gpg > ~/.tmp/pb-token
 gpg2 --no-tty -q -d ~/dotfiles/cryptd/idea15.jar.gpg > ~/.tmp/idea15.jar
 ./bin/decrypt-fonts
 
+# Install cronjobs
+echo "Installing systemd timers..."
+for FILE in ~/dotfiles/systemd/*.timer; do
+  sudo systemctl enable $(basename $FILE)
+  sudo systemctl start $(basename $FILE)
+done
+sudo systemctl daemon-reload
+
 echo "Done!"
