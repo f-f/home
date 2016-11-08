@@ -1,0 +1,6 @@
+[Unit]
+Description=Performs ZFS pools scrub
+
+[Service]
+Type=simple
+ExecStart=/sbin/zpool scrub system
