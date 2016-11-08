@@ -8,12 +8,13 @@ Config for Ubuntu 16.04 Xenial.
 
 Requirements: `sudo apt install gnupg git`
 
-1. Get the GPG key, put in `keypair.gpg`
+1. Get the GPG key in some way, put in `keypair.gpg`
 2. `gpg --allow-secret-key-import --import keypair.gpg`
 3. `rm keypair.gpg`
-4. `git clone https://github.com/ff-/dotfiles.git`
-5. Most likely you'd like to do `visudo` and input `ff_ ALL=(ALL) NOPASSWD: ALL`
-6. `cd dotfiles && ./bootstrap`
+4. Generate a new ssh key for each hostname, push them to the relevant servers
+5. `git clone git@github.com:ff-/dotfiles.git`
+6. Most likely you'd like to do `visudo` and input `ff_ ALL=(ALL) NOPASSWD: ALL`
+7. `cd dotfiles && ./bootstrap`
 
 ## Inspiration
 
