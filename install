@@ -38,7 +38,7 @@ boot
 curl-install planck http://planck-repl.org/releases/2.0-alpha5-ubuntu-16.04/planck
 
 ## Prezto
-git clone https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # Atom packages
 apm install --packages-file ~/dotfiles/atom/packages.list
