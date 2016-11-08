@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Root config
+# Root configs
 sudo ln -sv ~/dotfiles/mail/.msmtprc /etc/msmtprc
+for FILE in ~/dotfiles/systemd/*; do
+  sudo ln -sv $FILE /etc/systemd/system/
+done
 
 # Zsh
 ln -sv ~/.zprezto/runcoms/zlogin     ~/.zlogin
