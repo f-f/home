@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles, scripts and keys. Use at your own risk!
+This repository versions my personal dotfiles. Use at your own risk!
 
 Config for Ubuntu 16.04 Xenial.
 
