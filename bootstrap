@@ -25,7 +25,7 @@ echo "root: fabrizio@ferrai.io" >> /etc/aliases && newaliases
 
 # Decrypt stuff
 echo "Decrypting all the things..."
-gpg2 --no-tty -q -d ~/mail/msmtp-password.gpg > ~/.tmp/mailpass
+gpg2 --no-tty -q -d ~/dotfiles/mail/msmtp-password.gpg > ~/.tmp/mailpass
 gpg2 --no-tty -q -d ~/dotfiles/cryptd/pushbullet-token.gpg > ~/.tmp/pb-token
 gpg2 --no-tty -q -d ~/dotfiles/cryptd/idea15.jar.gpg > ~/.tmp/idea15.jar
 ./bin/decrypt-fonts
