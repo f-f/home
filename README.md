@@ -15,6 +15,7 @@ Requirements: `sudo apt install gnupg git`
 5. `git clone git@github.com:ff-/dotfiles.git`
 6. Most likely you'd like to do `visudo` and input `ff_ ALL=(ALL) NOPASSWD: ALL`
 7. `cd dotfiles && ./bootstrap`
+8. Logout and login again!
 
 ## Inspiration
 
