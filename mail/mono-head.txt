@@ -1,0 +1,7 @@
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Disposition: inline
+
+<html>
+<body>
+<pre style="font: monospace">

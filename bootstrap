@@ -25,13 +25,20 @@ echo "root: fabrizio@ferrai.io" >> /etc/aliases && newaliases
 
 # Decrypt stuff
 echo "Decrypting all the things..."
-gpg2 --no-tty -q -d ~/mail/msmtp-password.gpg > ~/.tmp/mailpass
+gpg2 --no-tty -q -d ~/dotfiles/mail/msmtp-password.gpg > ~/.tmp/mailpass
 gpg2 --no-tty -q -d ~/dotfiles/cryptd/pushbullet-token.gpg > ~/.tmp/pb-token
 gpg2 --no-tty -q -d ~/dotfiles/cryptd/idea15.jar.gpg > ~/.tmp/idea15.jar
 ./bin/decrypt-fonts
 
-# Setup SSH repo
-echo "Switching the repo over to SSH..."
-git remote set-url origin git@github.com:ff-/dotfiles.git
+# Install cronjobs
+echo "Installing systemd timers..."
+for FILE in ~/dotfiles/systemd/*.timer; do
+  sudo systemctl enable $(basename $FILE)
+  sudo systemctl start $(basename $FILE)
+done
+sudo systemctl daemon-reload
+
+# Set zsh as default
+chsh -s /bin/zsh
 
 echo "Done!"

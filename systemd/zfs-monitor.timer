@@ -1,0 +1,9 @@
+[Unit]
+Description=Send ZFS status email weekly
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1w
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,6 @@
+[Unit]
+Description=Nuke downloads folder
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'rm -rf /home/ff_/Downloads/*'
