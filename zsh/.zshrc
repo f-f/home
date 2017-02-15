@@ -21,5 +21,6 @@ alias rm="nocorrect rm"
 # Fix cp
 setopt clobber
 
-# Autojump init
-. /usr/share/autojump/autojump.sh
+# Autojump init (macOS, Ubuntu)
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
