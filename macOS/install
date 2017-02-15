@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# Brew installs
+## Taps
+brew tap caskroom/versions
+brew tap d12frosted/emacs-plus
+brew tap caskroom/fonts
+
+## Emacs
+brew install emacs-plus
+brew linkapps emacs-plus
+
+## Command-line software
+brew install wget htop trash ag coreutils zsh rlwrap httpie python node autojump gnupg2
+
+# Cask installs
+## Dev stuff
+brew cask install java iterm2 sourcetree dash
+
+## Editors
+brew cask install atom lighttable intellij-idea-next-eap 
+
+## Messaging
+brew cask install telegram flowdock slack
+
+## Media
+brew cask install spotify spotify-notifications vlc
+
+## Virtualization
+brew cask install virtualbox docker vagrant
+
+## System utils
+brew cask install flux caffeine alfred bettertouchtool the-unarchiver
+
+## Misc 
+brew cask install little-snitch dropbox
+
+## Fonts
+brew cask install font-source-code-pro font-fira-code
+
+
+# Clojure
+brew install leiningen
+brew install boot-clj
+boot
+boot # calling two times to complete all the upgrades
+brew install planck
+
+
+# Prezto
+git clone --recursive https://github.com/zsh-users/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+
+# Atom packages
+pip install jupyter
+## Hydrogen is kinda broken, skipping
+#apm install --packages-file ~/dotfiles/atom/packages.list
+
+
+# Spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+
+
+# TODO symlink .spacemacs
