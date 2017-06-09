@@ -33,7 +33,7 @@ brew cask install virtualbox docker vagrant
 brew cask install flux caffeine alfred bettertouchtool the-unarchiver
 
 ## Misc 
-brew cask install little-snitch dropbox
+brew cask install little-snitch dropbox obs unity appcleaner
 
 ## Fonts
 brew cask install font-source-code-pro font-fira-code
@@ -63,3 +63,10 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 
 # TODO symlink .spacemacs
+
+
+
+
+
+
+ 
