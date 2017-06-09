@@ -24,3 +24,8 @@ setopt clobber
 # Autojump init (macOS, Ubuntu)
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
