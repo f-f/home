@@ -22,3 +22,5 @@ ln -sv ~/dotfiles/bin                ~
 #ln -sv ~/dotfiles/mail               ~
 #ln -sv ~/dotfiles/mail/.msmtprc      ~
 ln -sv ~/dotfiles/lein/profiles.clj  ~/.lein
+ln -sv ~/dotfiles/clojure/boot.profile    ~/.boot
+ln -sv ~/dotfiles/clojure/boot.properties ~/.boot

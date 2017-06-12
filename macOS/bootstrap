@@ -8,6 +8,7 @@ echo "Starting bootstrap!"
 echo "Creating some useful folders..."
 mkdir -p ~/.gnupg
 mkdir -p ~/.lein
+mkdir -p ~/.boot
 mkdir -p ~/.tmp
 mkdir -p ~/.ssh
 mkdir -p ~/code
