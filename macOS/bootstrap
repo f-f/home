@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -e -o pipefail
+
+echo "Starting bootstrap!"
+
+# Create some folders
+echo "Creating some useful folders..."
+mkdir -p ~/.gnupg
+mkdir -p ~/.lein
+mkdir -p ~/.tmp
+mkdir -p ~/.ssh
+mkdir -p ~/code
+
+echo "Installing packages..."
+./install
+
+echo "Creating dotfiles links in ~..."
+./make-links
+
+# TODO: fix decrypting
+# Decrypt stuff
+echo "Decrypting all the things..."
+#gpg2 --no-tty -q -d ~/dotfiles/cryptd/pushbullet-token.gpg > ~/.tmp/pb-token
+#./bin/decrypt-fonts
+
+# Fix autohiding of dock: faster, better, stronger
+defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.5
+killall Dock
+
+# Set zsh as default
+## TODO: this requires to be run by hand, to fill in the password.
+## Either get rid of the password, or find a way to fill it in here.
+sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+
+echo "Done!"
