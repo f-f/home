@@ -19,6 +19,7 @@ ln -sv ~/dotfiles/zsh/.zshrc         ~
 ln -sv ~/dotfiles/git/.gitconfig     ~
 ln -sv ~/dotfiles/gpg/gpg.conf       ~/.gnupg/
 ln -sv ~/dotfiles/bin                ~
+ln -sv ~/dotfiles/spacemacs/.spacemacs ~
 #ln -sv ~/dotfiles/mail               ~
 #ln -sv ~/dotfiles/mail/.msmtprc      ~
 ln -sv ~/dotfiles/lein/profiles.clj  ~/.lein
