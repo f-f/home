@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Zsh
+ln -sv ~/.zprezto/runcoms/zlogin     ~/.zlogin
+ln -sv ~/.zprezto/runcoms/zlogout    ~/.zlogout
+ln -sv ~/.zprezto/runcoms/zprofile   ~/.zprofile
+ln -sv ~/.zprezto/runcoms/zshenv     ~/.zshenv
+
+ln -sv ~/dotfiles/zsh/.alias         ~
+ln -sv ~/dotfiles/zsh/.env           ~
+ln -sv ~/dotfiles/zsh/.functions     ~
+ln -sv ~/dotfiles/zsh/.zpreztorc     ~
+ln -sv ~/dotfiles/zsh/.zshrc         ~
+
+# TODO: fix or remove commented
+# All the others
+#ln -sv ~/dotfiles/atom               ~/.atom
+#ln -sv ~/dotfiles/ssh/config         ~/.ssh/
+ln -sv ~/dotfiles/git/.gitconfig     ~
+ln -sv ~/dotfiles/gpg/gpg.conf       ~/.gnupg/
+ln -sv ~/dotfiles/bin                ~
+#ln -sv ~/dotfiles/mail               ~
+#ln -sv ~/dotfiles/mail/.msmtprc      ~
+ln -sv ~/dotfiles/lein/profiles.clj  ~/.lein
