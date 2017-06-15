@@ -11,7 +11,7 @@ brew install emacs-plus
 brew linkapps emacs-plus
 
 ## Command-line software
-brew install wget htop trash ag coreutils zsh rlwrap httpie python node autojump gnupg2
+brew install wget htop trash ag coreutils zsh rlwrap httpie python node autojump gnupg2 lumo
 
 # Cask installs
 ## Dev stuff
@@ -48,25 +48,8 @@ brew install planck
 
 
 # Prezto
-git clone --recursive https://github.com/zsh-users/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-
-# Atom packages
-pip install jupyter
-## Hydrogen is kinda broken, skipping
-#apm install --packages-file ~/dotfiles/atom/packages.list
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 
 # Spacemacs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-
-
-
-# TODO symlink .spacemacs
-
-
-
-
-
-
- 
