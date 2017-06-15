@@ -19,12 +19,6 @@ echo "Installing packages..."
 echo "Creating dotfiles links in ~..."
 ./make-links
 
-# TODO: fix decrypting
-# Decrypt stuff
-echo "Decrypting all the things..."
-#gpg2 --no-tty -q -d ~/dotfiles/cryptd/pushbullet-token.gpg > ~/.tmp/pb-token
-#./bin/decrypt-fonts
-
 # Fix autohiding of dock: faster, better, stronger
 defaults write com.apple.Dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.5
