@@ -12,6 +12,12 @@ ln -sv ~/dotfiles/zsh/.functions     ~
 ln -sv ~/dotfiles/zsh/.zpreztorc     ~
 ln -sv ~/dotfiles/zsh/.zshrc         ~
 
+# Spacemacs
+ln -sv ~/dotfiles/spacemacs/.spacemacs ~
+for FILE in ~/dotfiles/spacemacs/private/*; 
+  do ln -sv $FILE ~/.emacs.d/private; 
+done
+
 # TODO: fix or remove commented
 # All the others
 #ln -sv ~/dotfiles/atom               ~/.atom
@@ -19,7 +25,6 @@ ln -sv ~/dotfiles/zsh/.zshrc         ~
 ln -sv ~/dotfiles/git/.gitconfig     ~
 ln -sv ~/dotfiles/gpg/gpg.conf       ~/.gnupg/
 ln -sv ~/dotfiles/bin                ~
-ln -sv ~/dotfiles/spacemacs/.spacemacs ~
 #ln -sv ~/dotfiles/mail               ~
 #ln -sv ~/dotfiles/mail/.msmtprc      ~
 ln -sv ~/dotfiles/lein/profiles.clj  ~/.lein
