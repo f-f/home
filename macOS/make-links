@@ -23,6 +23,7 @@ done
 #ln -sv ~/dotfiles/atom               ~/.atom
 #ln -sv ~/dotfiles/ssh/config         ~/.ssh/
 ln -sv ~/dotfiles/git/.gitconfig     ~
+ln -sv ~/dotfiles/git/.gitignore     ~
 ln -sv ~/dotfiles/gpg/gpg.conf       ~/.gnupg/
 ln -sv ~/dotfiles/bin                ~
 #ln -sv ~/dotfiles/mail               ~

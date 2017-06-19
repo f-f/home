@@ -2,8 +2,13 @@
 	email = fabrizio.ferrai@gmail.com
 	name = Fabrizio Ferrai
 	signingkey = 34949D71
+
 [push]
 	default = simple
+
+[core]
+    excludesfile = ~/.gitignore
+
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
