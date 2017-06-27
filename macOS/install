@@ -13,7 +13,7 @@ brew install emacs-plus
 brew linkapps emacs-plus
 
 ## Command-line software
-brew install wget htop trash ag coreutils zsh rlwrap httpie python node autojump gnupg2 lumo
+brew install wget htop trash ag coreutils zsh rlwrap httpie python node autojump gnupg2
 
 # Cask installs
 ## Dev stuff
@@ -46,7 +46,7 @@ brew install leiningen
 brew install boot-clj
 boot
 boot # calling two times to complete all the upgrades
-brew install planck
+brew install lumo
 
 
 # Prezto
