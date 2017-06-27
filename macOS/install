@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e -o pipefail
+
 # Brew installs
 ## Taps
 brew tap caskroom/versions
