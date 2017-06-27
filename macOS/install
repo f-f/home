@@ -21,7 +21,7 @@ brew cask install java iterm2 sourcetree dash
 brew cask install atom lighttable intellij-idea-next-eap 
 
 ## Messaging
-brew cask install telegram flowdock slack
+brew cask install telegram slack
 
 ## Media
 brew cask install spotify spotify-notifications vlc
