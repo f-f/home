@@ -18,16 +18,14 @@ for FILE in ~/dotfiles/spacemacs/private/*;
   do ln -sv $FILE ~/.emacs.d/private; 
 done
 
-# TODO: fix or remove commented
+# Clojure
+ln -sv ~/dotfiles/clojure/profiles.clj    ~/.lein
+ln -sv ~/dotfiles/clojure/boot.profile    ~/.boot
+ln -sv ~/dotfiles/clojure/boot.properties ~/.boot
+
 # All the others
-#ln -sv ~/dotfiles/atom               ~/.atom
-#ln -sv ~/dotfiles/ssh/config         ~/.ssh/
+ln -sv ~/dotfiles/ssh/config         ~/.ssh/
 ln -sv ~/dotfiles/git/.gitconfig     ~
 ln -sv ~/dotfiles/git/.gitignore     ~
 ln -sv ~/dotfiles/gpg/gpg.conf       ~/.gnupg/
 ln -sv ~/dotfiles/bin                ~
-#ln -sv ~/dotfiles/mail               ~
-#ln -sv ~/dotfiles/mail/.msmtprc      ~
-ln -sv ~/dotfiles/lein/profiles.clj  ~/.lein
-ln -sv ~/dotfiles/clojure/boot.profile    ~/.boot
-ln -sv ~/dotfiles/clojure/boot.properties ~/.boot
