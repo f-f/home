@@ -7,6 +7,7 @@ set -e -o pipefail
 brew tap caskroom/versions
 brew tap d12frosted/emacs-plus
 brew tap caskroom/fonts
+brew update
 
 ## Emacs
 brew install emacs-plus
@@ -20,7 +21,7 @@ brew install wget htop trash ag coreutils zsh rlwrap httpie python node autojump
 brew cask install java iterm2 sourcetree dash
 
 ## Editors
-brew cask install atom lighttable intellij-idea-next-eap 
+brew cask install atom lighttable
 
 ## Messaging
 brew cask install telegram slack
@@ -40,6 +41,9 @@ brew cask install little-snitch dropbox obs unity appcleaner firefox google-chro
 ## Fonts
 brew cask install font-source-code-pro font-fira-code
 
+# Python
+pip install --upgrade pip setuptools
+pip3 install --upgrade pip setuptools wheel
 
 # Clojure
 brew install leiningen
