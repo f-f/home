@@ -1,3 +1,10 @@
+# Generic
+Host *
+  ServerAliveInterval 30
+  UseKeychain yes
+  AddKeysToAgent yes
+
+# Personal servers
 Host augustus
   Hostname augustus.ferrai.io
   User root
@@ -10,8 +17,9 @@ Host claudius
   Port 10000
   IdentityFile ~/.ssh/claudius
 
+# Different key for github
 Host github.com
   IdentityFile ~/.ssh/github
 
-Host *
-  ServerAliveInterval 30
+# Local machine config, for work configs
+Include local/* 
