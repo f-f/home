@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e -o pipefail
+
 # Zsh
 ln -sv ~/.zprezto/runcoms/zlogin     ~/.zlogin
 ln -sv ~/.zprezto/runcoms/zlogout    ~/.zlogout
