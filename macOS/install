@@ -33,7 +33,7 @@ brew cask install virtualbox docker vagrant
 brew cask install flux caffeine alfred bettertouchtool the-unarchiver
 
 ## Misc 
-brew cask install little-snitch dropbox obs unity appcleaner
+brew cask install little-snitch dropbox obs unity appcleaner firefox google-chrome
 
 ## Fonts
 brew cask install font-source-code-pro font-fira-code
