@@ -11,12 +11,6 @@ Host augustus
   Port 10000
   IdentityFile ~/.ssh/augustus
 
-Host claudius
-  Hostname claudius.ferrai.io
-  User root
-  Port 10000
-  IdentityFile ~/.ssh/claudius
-
 # Different key for github
 Host github.com
   IdentityFile ~/.ssh/github
