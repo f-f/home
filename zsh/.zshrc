@@ -30,6 +30,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
 
+# Haskell binaries
+export PATH="$HOME/.local/bin:$PATH"
+
 # Google Cloud SDK
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
