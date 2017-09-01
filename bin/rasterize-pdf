@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# TODO: fix names and take the mas parameters
+convert -density 600 +antialias input.pdf output.pdf
