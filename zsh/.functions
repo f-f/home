@@ -147,3 +147,12 @@ function a() {
 		atom "$@";
 	fi;
 }
+
+# Spawn a bash in a docker. With no arguments spawns an ubuntu, otherwise the provided image
+function docker-bash() {
+  if [ $# -eq 0 ]; then
+    docker run -it ubuntu /bin/bash;
+  else
+    docker run -it "$@" /bin/bash;
+  fi;
+}
