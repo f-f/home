@@ -1,3 +1,5 @@
+Include local/*
+
 # Generic
 Host *
   ServerAliveInterval 30
@@ -14,6 +16,3 @@ Host augustus
 # Different key for github
 Host github.com
   IdentityFile ~/.ssh/github
-
-# Local machine config, for work configs
-Include local/* 
