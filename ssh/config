@@ -1,18 +1,42 @@
 Include local/*
 
-# Generic
 Host *
   ServerAliveInterval 30
   UseKeychain yes
   AddKeysToAgent yes
 
-# Personal servers
-Host augustus
+Host old-augustus
   Hostname augustus.ferrai.io
   User root
   Port 10000
   IdentityFile ~/.ssh/augustus
 
-# Different key for github
+Host domitian
+  Hostname fabferrai.hopto.org
+  User root
+  Port 10000
+  IdentityFile ~/.ssh/domitian
+
+Host claudius
+  Hostname fabferrai.hopto.org
+  User ff_
+  Port 10001
+  IdentityFile ~/.ssh/claudius
+
+Host nerva
+  Hostname 80.211.189.32
+  User root
+  Port 10000
+  IdentityFile ~/.ssh/nerva
+
+Host augustus
+  Hostname 194.86.88.127
+  User fabrizio
+  Port 10000
+  IdentityFile ~/.ssh/augustus
+
 Host github.com
   IdentityFile ~/.ssh/github
+
+Host gitlab.com
+  IdentityFile ~/.ssh/gitlabcom2
