@@ -28,8 +28,6 @@
 .zcompcache/
 .zcompdump
 .zcompdump.zwc
-.zlogin
-.zlogout
 resolv.conf.backup
 
 # Histories, may contain sensitive data
