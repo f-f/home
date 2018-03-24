@@ -1,3 +1,4 @@
+# Caches, useless configs
 .ICEauthority
 .PyCharm*/
 .Xauthority
@@ -11,15 +12,13 @@
 .httpie/
 .java/
 .kube/
+.gnupg/
 .lesshst
 .local/
 .mozilla/
 .nix-defexpr/
 .nv/
 .pki/
-.*_history
-.ssh/*
-!.ssh/config
 .stack/
 .steam/
 .steampath
@@ -29,11 +28,24 @@
 .zcompcache/
 .zcompdump
 .zcompdump.zwc
-.zhistory
 .zlogin
 .zlogout
+resolv.conf.backup
+
+# Histories, may contain sensitive data
+.*_history
+.zhistory
+
+# Definitely want to keep ssh config, definitely not keys
+.ssh/*
+!.ssh/config
+
+# Actual content
 Desktop/
 Downloads/
 Dropbox/
 code/
-resolv.conf.backup
+
+# Maybe?
+.nix-channels
+.nix-profile
