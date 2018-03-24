@@ -1,4 +1,3 @@
-.DS_Store
 .ICEauthority
 .PyCharm*/
 .Xauthority
@@ -18,7 +17,6 @@
 .nix-defexpr/
 .nv/
 .pki/
-.*-history
 .*_history
 .ssh/*
 !.ssh/config
