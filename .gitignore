@@ -18,6 +18,7 @@
 .ghc/
 .gnome/
 .gnupg/
+!.gnupg/gpg.conf
 .ipython/
 .lein/self-installs
 .lesshst
