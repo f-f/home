@@ -2,6 +2,7 @@
 .ICEauthority
 .PyCharm*/
 .Xauthority
+.boot/cache/
 .cache/
 .compose-cache/
 .config/
@@ -12,18 +13,24 @@
 .httpie/
 .java/
 .kube/
+.ghc/
 .gnupg/
+.ipython/
+.lein/self-installs
 .lesshst
 .local/
+.macromedia/
 .mozilla/
 .nix-defexpr/
 .nv/
+.m2/
 .pki/
 .stack/
 .steam/
 .steampath
 .steampid
 .tldrc/
+.tmp/
 .viminfo
 .zcompcache/
 .zcompdump
@@ -39,10 +46,19 @@ resolv.conf.backup
 !.ssh/config
 
 # Actual content
+code/
 Desktop/
+Documents/
 Downloads/
 Dropbox/
-code/
+Pictures/
+
+# Games
+.Prison Architect/
+.factorio/
+.olliolli/
+.paradoxinteractive/
+Ludeon Studios/
 
 # Maybe?
 .nix-channels
