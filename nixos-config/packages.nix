@@ -88,6 +88,7 @@ in {
     unstable.numix-cursor-theme
     unstable.postgresql96
     unstable.jetbrains.pycharm-community
+    unstable.teamviewer
   ];
 }
 

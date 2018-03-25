@@ -3,9 +3,9 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./versioned/local.nix
-      ./versioned/packages.nix
+      ../hardware-configuration.nix
+      ./local.nix
+      ./packages.nix
     ];
 
   time.timeZone = "Europe/Helsinki";
