@@ -26,6 +26,9 @@
       enable = true;
       drivers = [ pkgs.samsung-unified-linux-driver_4_01_17 ];
     };
+
+    # TV on every desktop
+    teamviewer.enable = true;
  
     # Enable X11 
     xserver = {
@@ -58,6 +61,26 @@
       liberation_ttf
     ];
   };
+
+  # Common desktop systemd services
+  systemd.user.services.dowloads-wipe = {
+    description = "Nuke downloads folder";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'rm -rf /home/fabrizio/Downloads/*'";
+    };
+  };
+
+  systemd.user.timers.downloads-wipe = {
+    description = "Nuke downloads folder on boot";
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "2m";
+    };
+  };
+
+  systemd.services.downloads-wipe.enable = true;
+  systemd.timers.downloads-wipe.enable = true;
 
   # Full 3D acceleration for 32b programs
   hardware.opengl.driSupport32Bit = true;

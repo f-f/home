@@ -1,6 +1,0 @@
-[Unit]
-Description=Send ZFS email status
-
-[Service]
-Type=simple
-ExecStart=/bin/bash -c '(echo "Subject: ZFS weekly report"; cat /home/ff_/mail/mono-head.txt; zpool status; printf "\n\n\n"; zpool list; cat /home/ff_/mail/mono-tail.txt ) | msmtp -a default fabrizio@ferrai.io'
