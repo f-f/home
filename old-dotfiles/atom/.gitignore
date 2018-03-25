@@ -1,8 +1,0 @@
-.apm
-blob-store
-compile-cache
-.node-gyp
-packages
-recovery
-storage
-*.out
