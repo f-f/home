@@ -13,7 +13,7 @@ Config for NixOS only.
 5. Symlink the main config: `sudo ln -sv /etc/nixos/versioned/configuration.nix /etc/nixos/configuration.nix`
 6. Add channels:
  ```
- sudo nix-channel --add http://nixos.org/channels/nixos-17.09 nixos
+ sudo nix-channel --add http://nixos.org/channels/nixos-18.03 nixos
  sudo nix-channel --add http://nixos.org/channels/nixos-unstable nixos-unstable
  sudo nix-channel --update
  ```
