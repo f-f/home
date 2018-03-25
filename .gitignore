@@ -4,6 +4,7 @@
 .Xauthority
 .boot/cache/
 .cache/
+.cert/
 .compose-cache/
 .config/
 .dbus/
@@ -13,7 +14,9 @@
 .httpie/
 .java/
 .kube/
+.gconf/
 .ghc/
+.gnome/
 .gnupg/
 .ipython/
 .lein/self-installs
@@ -63,3 +66,7 @@ Ludeon Studios/
 # Maybe?
 .nix-channels
 .nix-profile
+.bash_logout
+.bashrc
+.profile
+.fonts
