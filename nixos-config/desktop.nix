@@ -45,6 +45,8 @@
         default = "gnome3";
       };
     };
+
+    gnome3.chrome-gnome-shell.enable = true;
   };
 
   fonts = {

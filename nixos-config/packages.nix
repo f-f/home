@@ -7,7 +7,20 @@
 let unstable = import <nixos-unstable> { config.allowUnfree = true; };
 in {
   # Nix meta-config
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+
+    firefox = {
+      enableGoogleTalkPlugin = true;
+      enableGnomeExtensions = true;
+      enableAdobeFlash = true;
+    };
+
+    chromium = {
+      enablePepperFlash = true;
+      enablePepperPDF = true;
+    };
+  };
 
   # Finally, packages
   environment.systemPackages = with pkgs; [
@@ -26,14 +39,29 @@ in {
     graphviz
     gnumake
     autojump
+    silver-searcher
+    tokei
 
-    # Desktop
-    alacritty
+    # Gnome
+    chrome-gnome-shell
     gnome3.dconf
     gnome3.glib_networking
+    gnome3.gnome-shell-extensions
     lxappearance-gtk3
     numix-gtk-theme
     numix-icon-theme
+    numix-cursor-theme
+    gnomeExtensions.caffeine
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.nohotcorner
+    unstable.gnomeExtensions.timepp
+    #gnome-shell-extension-impatience
+    #gnomeExtensions.system-monitor
+    #gnomeExtensions.volume-mixer
+
+    # Desktop apps
+    alacritty
     steam
     keepassx-community
     calibre
@@ -80,12 +108,9 @@ in {
     unstable.pythonPackages.pycodestyle
 
     # Unstable packages:
-    unstable.silver-searcher
-    unstable.tokei
     unstable.tigervnc
     unstable.anki
     unstable.dropbox
-    unstable.numix-cursor-theme
     unstable.postgresql96
     unstable.jetbrains.pycharm-community
     unstable.teamviewer
