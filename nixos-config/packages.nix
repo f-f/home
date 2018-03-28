@@ -41,6 +41,7 @@ in {
     autojump
     silver-searcher
     tokei
+    shellcheck
 
     # Gnome
     chrome-gnome-shell
