@@ -60,6 +60,7 @@
       fira-code-symbols
       dejavu_fonts
       unifont
+      ubuntu_font_family
       liberation_ttf
     ];
   };
