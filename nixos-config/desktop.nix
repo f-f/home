@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [
+      ./packages-desktop.nix
+    ];
+
   # Configure audio setup for JACK + Overtone
   boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
   hardware.pulseaudio = {

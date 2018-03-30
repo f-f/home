@@ -1,4 +1,4 @@
-# Packages list
+# Packages list - desktop
 ## Note: does not contain configuration for software that is
 ## already covered by other NixOS options (e.g. emacs)
 
@@ -24,24 +24,6 @@ in {
 
   # Finally, packages
   environment.systemPackages = with pkgs; [
-    # Basic terminal
-    jq
-    curl
-    wget
-    httpie
-    tree
-    unzip
-    gnupg
-    htop
-    iftop
-    manpages
-    tldr
-    graphviz
-    gnumake
-    autojump
-    silver-searcher
-    tokei
-    shellcheck
 
     # Gnome
     chrome-gnome-shell
@@ -57,9 +39,6 @@ in {
     gnomeExtensions.dash-to-panel
     gnomeExtensions.nohotcorner
     unstable.gnomeExtensions.timepp
-    #gnome-shell-extension-impatience
-    #gnomeExtensions.system-monitor
-    #gnomeExtensions.volume-mixer
 
     # Desktop apps
     alacritty
@@ -68,6 +47,7 @@ in {
     calibre
     gparted
     synergy
+    emacs
 
     # Audio
     pavucontrol
@@ -83,30 +63,6 @@ in {
     # Messaging
     tdesktop
     slack
-
-    # Cloud
-    docker_compose
-    kubernetes
-    unstable.google-cloud-sdk
-
-    # Development
-    emacs
-    leiningen
-    boot
-    stack
-    gcc
-    git
-    maven
-    openjdk
-    nodejs
-    python3
-
-    # Haskell
-    haskellPackages.stylish-haskell
-
-    # Python
-    unstable.pythonPackages.yapf
-    unstable.pythonPackages.pycodestyle
 
     # Unstable packages:
     unstable.tigervnc

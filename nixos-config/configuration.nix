@@ -5,7 +5,7 @@
     [
       ../hardware-configuration.nix
       ./local.nix
-      ./packages.nix
+      ./packages-base.nix
     ];
 
   time.timeZone = "Europe/Helsinki";
