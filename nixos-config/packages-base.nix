@@ -30,10 +30,8 @@ in {
     tokei
     shellcheck
 
-    # Cloud
+    # Containers
     docker_compose
-    kubernetes
-    unstable.google-cloud-sdk
 
     # Development
     leiningen
@@ -45,9 +43,6 @@ in {
     openjdk
     nodejs
     python3
-
-    # Haskell
-    haskellPackages.stylish-haskell
 
     # Python
     pythonPackages.yapf

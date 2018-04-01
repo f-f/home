@@ -64,6 +64,13 @@ in {
     tdesktop
     slack
 
+    # Kubernetes
+    kubernetes
+    unstable.google-cloud-sdk
+
+    # Haskell packages
+    haskellPackages.stylish-haskell
+
     # Unstable packages:
     unstable.tigervnc
     unstable.anki
