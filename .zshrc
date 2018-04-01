@@ -21,9 +21,10 @@ alias rm="nocorrect rm"
 # Fix cp
 setopt clobber
 
-# Autojump init (macOS, Ubuntu)
+# Autojump init - macOS
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
+# Autojump init - NixOS
+[ -f "$(autojump-share)/autojump.zsh" ] && source "$(autojump-share)/autojump.zsh"
 
 # Google Cloud SDK
 if [ "$(uname -s)" '==' "Darwin" ]; then
