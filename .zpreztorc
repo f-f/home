@@ -63,7 +63,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'none'
 
 #
 # GNU Utility
@@ -99,7 +99,7 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'powerline'
+zstyle ':prezto:module:prompt' theme 'paradox'
 
 #
 # Ruby
@@ -123,7 +123,7 @@ zstyle ':prezto:module:prompt' theme 'powerline'
 #
 
 # Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh:load' identities 'augustus' 'github' 'master'
+zstyle ':prezto:module:ssh:load' identities 'augustus' 'claudius' 'nerva' 'gitlab' 'github'
 
 #
 # Syntax Highlighting
