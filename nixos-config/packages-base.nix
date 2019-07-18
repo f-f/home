@@ -25,10 +25,12 @@ in {
     tldr
     graphviz
     gnumake
-    autojump
+    unstable.autojump
     silver-searcher
     tokei
     shellcheck
+    mtr
+    pbzip2
 
     # Containers
     docker_compose

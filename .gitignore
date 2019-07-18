@@ -40,6 +40,14 @@
 .zcompdump
 .zcompdump.zwc
 resolv.conf.backup
+.yarnrc
+.npm
+.wget-hsts
+.PhpStorm*
+.gsutil
+.hpack
+.mysql
+.terraform.d
 
 # Histories, may contain sensitive data
 .*_history

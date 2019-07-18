@@ -48,6 +48,7 @@
     extraGroups = [ "wheel" "networkmanager" "docker" "dbus" ];
   };
 
+  
   # Passwordless sudo
   security.sudo.wheelNeedsPassword = false;
 

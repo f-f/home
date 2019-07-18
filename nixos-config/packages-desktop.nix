@@ -13,12 +13,10 @@ in {
     firefox = {
       enableGoogleTalkPlugin = true;
       enableGnomeExtensions = true;
-      enableAdobeFlash = true;
     };
 
     chromium = {
       enablePepperFlash = true;
-      enablePepperPDF = true;
     };
   };
 
@@ -64,20 +62,28 @@ in {
     tdesktop
     slack
 
-    # Kubernetes
+    # Devops
     kubernetes
+    terraform
     unstable.google-cloud-sdk
 
     # Haskell packages
     haskellPackages.stylish-haskell
 
+    # Dev pkgs
+    mypy
+    ncurses
+
     # Unstable packages:
+    unstable.stack
     unstable.tigervnc
     unstable.anki
     unstable.dropbox
     unstable.postgresql96
     unstable.jetbrains.pycharm-community
     unstable.teamviewer
+    unstable.yarn
+    unstable.jetbrains.phpstorm
   ];
 }
 

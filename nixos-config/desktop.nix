@@ -44,14 +44,15 @@
  
       displayManager = {
         gdm.enable = true;
+        gdm.wayland = false;
       };
       desktopManager = {
         gnome3.enable = true;
-        default = "gnome3";
       };
     };
 
     gnome3.chrome-gnome-shell.enable = true;
+    gnome3.gnome-keyring.enable = true;
   };
 
   fonts = {
