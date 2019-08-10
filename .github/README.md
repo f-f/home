@@ -10,11 +10,11 @@ Config for NixOS only.
 2. Fetch everything: `cd ~ && git submodule update --init --recursive --remote`
 2. Symlink `~/nixos-config` to `/etc/nixos/versioned`: `sudo ln -sv ~/nixos-config /etc/nixos/versioned`
 3. Write down the config for the new machine, start from the example: `cd ~/nixos-config && cp local-example.nix $(hostname).nix`
-4. Symlink the current machine configuration to `ln -sv $(hostname).nix local.nix`
+4. Import it as a local configuration: `echo "import ./$(hostname).nix" > local.nix`
 5. Symlink the main config: `sudo ln -sv /etc/nixos/versioned/configuration.nix /etc/nixos/configuration.nix`
 6. Add channels:
  ```
- sudo nix-channel --add http://nixos.org/channels/nixos-18.03 nixos
+ sudo nix-channel --add http://nixos.org/channels/nixos-19.03 nixos
  sudo nix-channel --add http://nixos.org/channels/nixos-unstable nixos-unstable
  sudo nix-channel --update
  ```
