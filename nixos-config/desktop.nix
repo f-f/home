@@ -32,9 +32,6 @@
       drivers = [ pkgs.samsung-unified-linux-driver_4_01_17 ];
     };
 
-    # TV on every desktop
-    teamviewer.enable = true;
- 
     # Enable X11 
     xserver = {
       enable = true;

@@ -81,7 +81,6 @@ in {
     unstable.dropbox
     unstable.postgresql96
     unstable.jetbrains.pycharm-community
-    unstable.teamviewer
     unstable.yarn
     unstable.jetbrains.phpstorm
   ];
