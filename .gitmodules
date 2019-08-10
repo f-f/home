@@ -4,3 +4,6 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/syl20bnr/spacemacs
+[submodule ".z_source"]
+	path = .z_source
+	url = https://github.com/rupa/z.git

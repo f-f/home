@@ -49,9 +49,11 @@ resolv.conf.backup
 .mysql
 .terraform.d
 
+
 # Histories, may contain sensitive data
 .*_history
 .zhistory
+.z
 
 # Definitely want to keep ssh config, definitely not keys
 .ssh/*
