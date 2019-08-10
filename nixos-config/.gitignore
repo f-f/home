@@ -1,4 +1,2 @@
-augustus.nix
-claudius.nix
-nerva.nix
 local.nix
+secrets.nix
