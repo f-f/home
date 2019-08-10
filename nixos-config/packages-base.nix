@@ -25,7 +25,6 @@ in {
     tldr
     graphviz
     gnumake
-    unstable.autojump
     silver-searcher
     tokei
     shellcheck
