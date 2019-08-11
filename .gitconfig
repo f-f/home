@@ -7,10 +7,19 @@
 	default = simple
 
 [core]
-    excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore
+
+[diff "cbor"]
+    textconv = cbor2diag.rb
+    binary = true
 
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	arcl = "! f() { git tag | grep '^archive/';}; f"
 	arc = "! f() { git tag archive/$1 $1 && git branch -D $1;}; f"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
