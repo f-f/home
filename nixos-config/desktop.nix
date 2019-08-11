@@ -31,7 +31,7 @@
       enable = true;
       drivers = [ pkgs.samsung-unified-linux-driver_4_01_17 ];
     };
-
+    
     # Enable X11 
     xserver = {
       enable = true;
@@ -58,6 +58,7 @@
     fonts = with pkgs; [
       corefonts
       inconsolata
+      source-code-pro
       font-awesome-ttf
       fira-code
       fira-code-symbols
@@ -90,6 +91,22 @@
 
   # Full 3D acceleration for 32b programs
   hardware.opengl.driSupport32Bit = true;
+
+  # Also steam controller
+  # hardware.steam-hardware.enable = true;
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
+    KERNEL=="uinput", MODE="0660", GROUP="users", OPTIONS+="static_node=uinput"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="28de", MODE="0666"
+    KERNEL=="hidraw*", KERNELS=="*28DE:*", MODE="0666" 
+    KERNEL=="hidraw*", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="05c4", MODE="0666"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0ba0", MODE="0666"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="09cc", MODE="0666"
+    KERNEL=="hidraw*", KERNELS=="*054C:05C4*", MODE="0666"
+    KERNEL=="hidraw*", KERNELS=="*054C:09CC*", MODE="0666"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="2009", MODE="0666"
+    KERNEL=="hidraw*", KERNELS=="*057E:2009*", MODE="0666"
+  '';
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;

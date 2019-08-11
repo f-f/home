@@ -18,6 +18,15 @@ in {
     chromium = {
       enablePepperFlash = true;
     };
+
+    #packageOverrides = super: let self = super.pkgs; in
+    #  {
+    #    linuxPackages = super.linuxPackages_latest.extend (self: super: {
+    #      nvidiaPackages = super.nvidiaPackages // {
+    #        stable = unstable.linuxPackages_latest.nvidiaPackages.stable;
+    #      };
+    #    });
+    #  };
   };
 
   # Finally, packages
@@ -74,15 +83,20 @@ in {
     mypy
     ncurses
 
+    # Other
+    ntfs3g
+
     # Unstable packages:
-    unstable.stack
-    unstable.tigervnc
     unstable.anki
     unstable.dropbox
     unstable.postgresql96
     unstable.jetbrains.pycharm-community
     unstable.yarn
     unstable.jetbrains.phpstorm
+    unstable.stack
+    unstable.steamcontroller
+    unstable.testdisk
+    unstable.testdisk-photorec
   ];
 }
 

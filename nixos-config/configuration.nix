@@ -53,5 +53,5 @@
   security.sudo.wheelNeedsPassword = false;
 
   # NixOS version
-  system.stateVersion = "17.09";
+  system.stateVersion = "19.03";
 }

@@ -47,6 +47,7 @@ in {
 
     # Python
     pythonPackages.yapf
+    pythonPackages.magic-wormhole
     pythonPackages.pycodestyle
   ];
 }

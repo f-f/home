@@ -27,7 +27,7 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/dotfiles/spacemacs/")
+   dotspacemacs-configuration-layer-path '("~/spacemacs/")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
@@ -93,7 +93,7 @@ values."
    ;; possible. Set it to nil if you have no way to use HTTPS in your
    ;; environment, otherwise it is strongly recommended to let it set to t.
    ;; This variable has no effect if Emacs is launched with the parameter
-   ;; `--insecure' which forces the value of this variable to nil.
+   ;; `--insecure' which forces the value letterof this variable to nil.
    ;; (default t)
    dotspacemacs-elpa-https t
    ;; Maximum allowed time in seconds to contact an ELPA repository.
@@ -135,6 +135,7 @@ values."
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
+   dotspacemacs-mode-line-theme 'spacemacs
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
@@ -148,16 +149,16 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '(("Fira Code"
+   dotspacemacs-default-font '(("Source Code Pro"
                                 :size 13
                                 :weight normal
                                 :width normal
-                                :powerline-scale 1.1)
+                                :powerline-scale 1.2)
                                ("Fira Code Symbol"
                                 :size 13
                                 :weight normal
                                 :width normal
-                                :powerline-scale 1.1))
+                                powerline-scale 1.2))
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).

@@ -9,6 +9,7 @@
 .config/
 .dbus/
 .dropbox-dist/
+.dropbox-dist-old*
 .dropbox/
 .esd_auth
 .httpie/
@@ -48,6 +49,7 @@ resolv.conf.backup
 .hpack
 .mysql
 .terraform.d
+.wine
 
 
 # Histories, may contain sensitive data
