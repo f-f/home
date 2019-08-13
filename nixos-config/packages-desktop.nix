@@ -38,9 +38,9 @@ in {
     gnome3.glib_networking
     gnome3.gnome-shell-extensions
     lxappearance-gtk3
-    numix-gtk-theme
-    numix-icon-theme
-    numix-cursor-theme
+    unstable.numix-gtk-theme
+    unstable.numix-icon-theme
+    unstable.numix-cursor-theme
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
@@ -48,13 +48,13 @@ in {
     unstable.gnomeExtensions.timepp
 
     # Desktop apps
-    alacritty
+    unstable.alacritty
     steam
     keepassx-community
     calibre
     gparted
     synergy
-    emacs
+    unstable.emacs
 
     # Audio
     pavucontrol
@@ -68,8 +68,8 @@ in {
     google-chrome
 
     # Messaging
-    tdesktop
-    slack
+    unstable.tdesktop
+    unstable.slack
 
     # Devops
     kubernetes
@@ -89,6 +89,7 @@ in {
     # Unstable packages:
     unstable.anki
     unstable.dropbox
+    unstable.supercollider
     unstable.postgresql96
     unstable.jetbrains.pycharm-community
     unstable.yarn

@@ -51,7 +51,8 @@ resolv.conf.backup
 .mysql
 .terraform.d
 .wine
-
+.spacemacs.env
+.emacs.d/transient
 
 # Histories, may contain sensitive data
 .*_history

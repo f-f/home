@@ -7,7 +7,7 @@
     ];
 
   # Configure audio setup for JACK + Overtone
-  boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
+  # boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
   hardware.pulseaudio = {
     enable = true;
     package = pkgs.pulseaudioFull;
@@ -33,19 +33,15 @@
     };
     
     # Enable X11 
-    xserver = {
-      enable = true;
-      layout = "us";
-      xkbOptions = "eurosign:e";
-      videoDrivers = [ "nvidia" ];
- 
-      displayManager = {
-        gdm.enable = true;
-        gdm.wayland = false;
-      };
-      desktopManager = {
-        gnome3.enable = true;
-      };
+    xserver.enable = true;
+    xserver.layout = "us";
+    xserver.xkbOptions = "eurosign:e";
+    xserver.displayManager = {
+      gdm.enable = true;
+      gdm.wayland = false;
+    };
+    xserver.desktopManager = {
+      gnome3.enable = true;
     };
 
     gnome3.chrome-gnome-shell.enable = true;

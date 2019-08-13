@@ -27,6 +27,9 @@
     };
   };
 
+  # videocard
+  xserver.videoDrivers = [ "nvidia" ];
+
   networking.hostName = "claudius";  
   networking.firewall.enable = false;
   networking.hostId = "454f37c2";

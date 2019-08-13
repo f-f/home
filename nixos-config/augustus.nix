@@ -10,6 +10,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # videocard
+  xserver.videoDrivers = [ "nvidia" ];
+
   # Network and Firewall
   networking = {
     hostName = "augustus";
