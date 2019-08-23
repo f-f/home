@@ -45,7 +45,7 @@
     uid = 1000;
     home = "/home/fabrizio";
     shell = "/run/current-system/sw/bin/zsh";
-    extraGroups = [ "wheel" "networkmanager" "docker" "dbus" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" "dbus" "audio" "jackaudio" ];
   };
 
   

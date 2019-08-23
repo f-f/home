@@ -6,30 +6,27 @@
       ./packages-desktop.nix
     ];
 
-  # Configure audio setup for JACK + Overtone
-  # boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
+  # Configure audio setup
   hardware.pulseaudio = {
     enable = true;
-    package = pkgs.pulseaudioFull;
+    package = pkgs.pulseaudioFull.override { jackaudioSupport = true; };
     support32Bit = true;
+    daemon.config = { default-sample-rate = 48000; };
   };
-  
+  sound.enable = true;
+  hardware.enableAllFirmware = true;
+ 
+  location.latitude = 60.169856;
+  location.longitude = 24.938379;
+ 
   services = {
     # Redshift for Helsinki
     redshift = {
       enable = true;
-      latitude = "60.169856";
-      longitude = "24.938379";
       temperature = {
         day = 6500;
         night = 2800;
       };
-    };
-
-    # Enable CUPS
-    printing = {
-      enable = true;
-      drivers = [ pkgs.samsung-unified-linux-driver_4_01_17 ];
     };
     
     # Enable X11 

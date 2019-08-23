@@ -4,7 +4,19 @@
 
 { config, pkgs, ... }:
 
-let unstable = import <nixos-unstable> { config.allowUnfree = true; };
+let unstable = import <nixos-unstable> {
+  config = {
+    allowUnfree = true;
+    packageOverrides = pkgs: rec {
+      rtmidi = pkgs.rtmidi.overrideAttrs (oldAttrs: rec {
+        preConfigure = ''
+          ./autogen.sh --with-jack --with-alsa
+          ./configure
+        '';
+      });
+    };
+  };
+};
 in {
   # Nix meta-config
   nixpkgs.config = {
@@ -57,11 +69,14 @@ in {
     unstable.emacs
 
     # Audio
-    pavucontrol
-    qjackctl
-    vlc
-    spotify
-    ardour
+    unstable.pavucontrol
+    unstable.qjackctl
+    unstable.vlc
+    unstable.jack2
+    unstable.libjack2
+    unstable.cadence
+    unstable.spotify
+    unstable.ardour
 
     # Internet
     firefox
@@ -69,7 +84,7 @@ in {
 
     # Messaging
     unstable.tdesktop
-    unstable.slack
+    slack
 
     # Devops
     kubernetes

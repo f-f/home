@@ -4,7 +4,11 @@
   imports = [
     ./desktop.nix
     ./server.nix
+    /home/fabrizio/musnix
   ];
+
+  musnix.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Bootloader
   boot.loader.grub.enable = true;
