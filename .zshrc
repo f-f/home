@@ -24,6 +24,9 @@ setopt clobber
 # Autojump init
 . .z_source/z.sh
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # Google Cloud SDK
 if [ "$(uname -s)" '==' "Darwin" ]; then
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
