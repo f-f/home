@@ -52,7 +52,9 @@ resolv.conf.backup
 .terraform.d
 .wine
 .spacemacs.env
-.emacs.d/transient
+.emacs.d/transient/
+.node-gyp/
+.log/
 
 # Histories, may contain sensitive data
 .*_history
