@@ -103,6 +103,7 @@ in {
 
     # Unstable packages:
     unstable.anki
+    unstable.cabal-install
     unstable.dropbox
     unstable.supercollider
     unstable.postgresql96

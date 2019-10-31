@@ -42,11 +42,12 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      git
+     lsp
      markdown
      parinfer
      (clojure :packages (not clojure-cheatsheet))
      (purescript :variables purescript-enable-rebuild-on-save t)
-     (haskell :variables haskell-completion-backend 'intero)
+     (haskell :variables haskell-completion-backend 'ghci haskell-process-type 'stack-ghci)
      )
 
    ;; List of additional packages that will be installed without being
@@ -56,7 +57,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(dhall-mode tidal)
+   dotspacemacs-additional-packages '(dhall-mode tidal (lsp-haskell :location (recipe :fetcher github :repo "emacs-lsp/lsp-haskell")))
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -464,6 +465,11 @@ before packages are loaded."
     :ensure t
     :mode "\\.dhall\\'")
   (setq dhall-format-at-save nil)
+
+  ;; HIE
+  (setq lsp-haskell-process-path-hie "hie-wrapper")
+  (require 'lsp-haskell)
+  (add-hook 'haskell-mode-hook #'lsp)
 
   ;; Fancy unicode
   (global-set-key (kbd "M-l") (lambda () (interactive) (insert "\u03bb"))) ;lambda
