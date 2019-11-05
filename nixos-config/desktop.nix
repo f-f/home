@@ -14,7 +14,8 @@
     daemon.config = { default-sample-rate = 48000; };
   };
   sound.enable = true;
-  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = false;
  
   location.latitude = 60.169856;
   location.longitude = 24.938379;

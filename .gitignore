@@ -55,6 +55,8 @@ resolv.conf.backup
 .emacs.d/transient/
 .node-gyp/
 .log/
+.vim/
+.yarn/
 
 # Histories, may contain sensitive data
 .*_history

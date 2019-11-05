@@ -44,11 +44,6 @@ in {
     openjdk
     nodejs
     python3
-
-    # Python
-    pythonPackages.yapf
-    pythonPackages.magic-wormhole
-    pythonPackages.pycodestyle
   ];
 }
 

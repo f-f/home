@@ -53,10 +53,9 @@ in {
     unstable.numix-gtk-theme
     unstable.numix-icon-theme
     unstable.numix-cursor-theme
-    gnomeExtensions.caffeine
+    # gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
-    gnomeExtensions.nohotcorner
     unstable.gnomeExtensions.timepp
 
     # Desktop apps
@@ -95,7 +94,6 @@ in {
     haskellPackages.stylish-haskell
 
     # Dev pkgs
-    mypy
     ncurses
 
     # Other
@@ -107,13 +105,9 @@ in {
     unstable.dropbox
     unstable.supercollider
     unstable.postgresql96
-    unstable.jetbrains.pycharm-community
     unstable.yarn
-    unstable.jetbrains.phpstorm
     unstable.stack
     unstable.steamcontroller
-    unstable.testdisk
-    unstable.testdisk-photorec
   ];
 }
 
