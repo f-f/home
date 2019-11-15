@@ -30,6 +30,7 @@ in {
     shellcheck
     mtr
     pbzip2
+    unstable.wireguard
 
     # Containers
     docker_compose
