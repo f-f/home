@@ -22,7 +22,7 @@ alias rm="nocorrect rm"
 setopt clobber
 
 # Autojump init
-. .z_source/z.sh
+. ~/.z_source/z.sh
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -32,3 +32,12 @@ if [ "$(uname -s)" '==' "Darwin" ]; then
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 fi
+
+# NPM
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
