@@ -57,6 +57,16 @@ resolv.conf.backup
 .log/
 .vim/
 .yarn/
+.npm-packages
+.hoogle
+.npmrc
+.sudo_as_admin_successful
+.xscreensaver
+.xsession-errors*
+.dmrc
+.Xdefaults
+snap/*
+
 
 # Histories, may contain sensitive data
 .*_history
