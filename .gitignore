@@ -1,9 +1,12 @@
 # Caches, useless configs
 .ICEauthority
 .PyCharm*/
+.IdeaIC2019.3/
 .Xauthority
+.atom/
 .boot/cache/
 .cache/
+.cargo/
 .cert/
 .compose-cache/
 .config/
@@ -66,12 +69,26 @@ resolv.conf.backup
 .dmrc
 .Xdefaults
 snap/*
-
+.aws/
+.docker/
+.face
+.mono
+.ngrok2
+.nvidia-*
+.pulse-cookie
+.pulp
+.sqitch
+.thunderbird
+.tldr
+.xournal
+.zoom
+.vscode
 
 # Histories, may contain sensitive data
 .*_history
 .zhistory
 .z
+.lein/repl-history
 
 # Definitely want to keep ssh config, definitely not keys
 .ssh/*
@@ -86,10 +103,13 @@ Dropbox/
 Pictures/
 
 # Games
+Steam/
 .Prison Architect/
 .factorio/
 .olliolli/
 .paradoxinteractive/
+.paradoxlauncher/
+.proton/
 Ludeon Studios/
 
 # Maybe?
