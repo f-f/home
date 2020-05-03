@@ -53,7 +53,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -63,7 +63,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-zstyle ':prezto:module:git:status:ignore' submodules 'none'
+zstyle ':prezto:module:git:status:ignore' submodules 'dirty'
 
 #
 # GNU Utility
@@ -77,10 +77,10 @@ zstyle ':prezto:module:git:status:ignore' submodules 'none'
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' found 'green'
 
 # Set the query not found color.
-# zstyle ':prezto:module:history-substring-search:color' not-found ''
+zstyle ':prezto:module:history-substring-search:color' not-found 'red'
 
 # Set the search globbing flags.
 # zstyle ':prezto:module:history-substring-search' globbing-flags ''
@@ -100,6 +100,8 @@ zstyle ':prezto:module:git:status:ignore' submodules 'none'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'paradox'
+
+zstyle ':prezto:module:prompt' pwd-length 'short'
 
 #
 # Ruby
@@ -123,7 +125,7 @@ zstyle ':prezto:module:prompt' theme 'paradox'
 #
 
 # Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh:load' identities 'augustus' 'claudius' 'nerva' 'gitlab' 'github'
+zstyle ':prezto:module:ssh:load' identities 'augustus' 'claudius' 'domitian' 'nerva' 'gitlab' 'github'
 
 #
 # Syntax Highlighting
