@@ -38,6 +38,7 @@ This function should only modify configuration layer settings."
      multiple-cursors
      neotree
      idris
+     agda
      osx
      auto-completion
      better-defaults
@@ -500,6 +501,10 @@ before packages are loaded."
   ;; Git reposlayer config
   (setq magit-repository-directories '("~/code/"))
 
+  ;; JS indent
+  (setq-default js2-basic-offset 2
+                js-indent-level 2)
+
   ;; Cider config
   (setq cider-boot-parameters "dev")
   (setq cider-repl-pop-to-buffer-on-connect 'display-only)
@@ -605,7 +610,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tidal spaceline powerline smeargle smartparens reveal-in-osx-finder restart-emacs rainbow-delimiters psci purescript-mode psc-ide dash-functional popwin persp-mode pcre2el pbcopy paradox osx-trash osx-dictionary orgit org-plus-contrib org-bullets open-junk-file neotree mwim move-text markdown-toc markdown-mode magit-gitflow magit-popup magit macrostep lorem-ipsum linum-relative link-hint launchctl intero flycheck indent-guide idris-mode prop-menu hydra hungry-delete hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile helm-mode-manager helm-make helm-hoogle helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter transient git-commit with-editor evil-escape goto-chg elisp-slime-nav dumb-jump f dash s diminish dhall-mode reformatter company-statistics company-ghci company-ghc ghc haskell-mode company-cabal company column-enforce-mode cmm-mode clojure-snippets multiple-cursors paredit peg lv clean-aindent-mode cider-eval-sexp-fu eval-sexp-fu cider sesman pkg-info parseedn clojure-mode parseclj a epl bind-map bind-key auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup monokai-theme))))
+    (mmm-mode lsp-haskell lsp-mode ht evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu evil undo-tree clj-refactor inflections edn spinner queue adaptive-wrap ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tidal spaceline powerline smeargle smartparens reveal-in-osx-finder restart-emacs rainbow-delimiters psci purescript-mode psc-ide dash-functional popwin persp-mode pcre2el pbcopy paradox osx-trash osx-dictionary orgit org-plus-contrib org-bullets open-junk-file neotree mwim move-text markdown-toc markdown-mode magit-gitflow magit-popup magit macrostep lorem-ipsum linum-relative link-hint launchctl intero flycheck indent-guide idris-mode prop-menu hydra hungry-delete hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile helm-mode-manager helm-make helm-hoogle helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter transient git-commit with-editor evil-escape goto-chg elisp-slime-nav dumb-jump f dash s diminish dhall-mode reformatter company-statistics company-ghci company-ghc ghc haskell-mode company-cabal company column-enforce-mode cmm-mode clojure-snippets multiple-cursors paredit peg lv clean-aindent-mode cider-eval-sexp-fu eval-sexp-fu cider sesman pkg-info parseedn clojure-mode parseclj a epl bind-map bind-key auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup monokai-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
