@@ -50,8 +50,10 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
-source /home/fabrizio/.config/broot/launcher/bash/br
-
+BR="/home/fabrizio/.config/broot/launcher/bash/br"
+if test -f $BR; then
+  source /home/fabrizio/.config/broot/launcher/bash/br
+fi
 
 ## Patch the Paradox theme to display different colors on different hosts
 function host_color {
