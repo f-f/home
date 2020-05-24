@@ -83,6 +83,7 @@ snap/*
 .xournal
 .zoom
 .vscode
+.saokerc
 
 # Histories, may contain sensitive data
 .*_history

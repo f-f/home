@@ -28,6 +28,7 @@ zstyle ':prezto:load' pmodule \
   'terminal' \
   'editor' \
   'history' \
+  'history-substring-search' \
   'directory' \
   'spectrum' \
   'utility' \
@@ -35,25 +36,30 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'command-not-found' \
   'git' \
+  'ssh' \
   'gpg' \
   'node' \
   'python' \
+  'screen' \
   'dpkg' \
-  'syntax-highlighting'
+  'syntax-highlighting' \
+  'autosuggestions' \
+  'docker' \
+  'haskell'
 
 #
 # Autosuggestions
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:autosuggestions:color' found ''
+zstyle ':prezto:module:autosuggestions:color' found 'yellow'
 
 #
 # Editor
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
