@@ -2,17 +2,17 @@
 
 if [ -z "$1" ]
   then
-    echo "No argument supplied"
+    echo "Please supply a filepath"
     exit 1
 fi
 
 FILE=$1
 
 if [ -f $FILE ];
-  then
-    scp $FILE augustus:///srv/uploads/files && printf "\nFile URL: https://u.ferrai.io/$FILE\n"
+then
+  ffsend upload --downloads 1 --password --archive --copy --open "${FILE}"
 else
-    echo "File $FILE does not exist."
-    exit 1
+  echo "File $FILE does not exist."
+  exit 1
 fi
 
