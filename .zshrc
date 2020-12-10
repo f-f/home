@@ -81,4 +81,3 @@ function prompt_paradox_build_prompt {
 
   prompt_paradox_end_segment
 }
-
