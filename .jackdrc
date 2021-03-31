@@ -1,1 +1,1 @@
-/usr/bin/jackd -dalsa -dhw:U192k -r48000 -p256 -n2
+/usr/bin/jackd -dalsa -dhw:UMC1820 -r48000 -p128 -n2

@@ -25,6 +25,10 @@ alias rm="nocorrect rm"
 # Fix cp
 setopt clobber
 
+# More alias
+alias sysd="sudo systemctl"
+alias ob="obsidian &"
+
 # Autojump init
 . ~/.z_source/z.sh
 
