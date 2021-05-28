@@ -39,7 +39,7 @@
   };
 
   # Main user
-  users.extraUsers.fabrizio = {
+  users.users.fabrizio = {
     isNormalUser = true;
     createHome = true;
     uid = 1000;
@@ -53,5 +53,5 @@
   security.sudo.wheelNeedsPassword = false;
 
   # NixOS version
-  system.stateVersion = "19.03";
+  system.stateVersion = "20.09";
 }

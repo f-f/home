@@ -30,10 +30,9 @@ in {
     shellcheck
     mtr
     pbzip2
-    unstable.wireguard
-
-    # Containers
-    docker_compose
+    wireguard
+    direnv
+    ddrescue
 
     # Development
     leiningen
@@ -45,6 +44,9 @@ in {
     openjdk
     nodejs
     python3
+    spago
+    purescript
+    docker_compose
   ];
 }
 
