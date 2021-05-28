@@ -7,6 +7,3 @@
 [submodule ".z_source"]
 	path = .z_source
 	url = https://github.com/rupa/z.git
-[submodule "musnix"]
-	path = musnix
-	url = https://github.com/musnix/musnix.git
