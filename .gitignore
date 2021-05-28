@@ -114,6 +114,8 @@ Steam/
 Ludeon Studios/
 
 # Maybe?
+hardware-configuration.nix
+nixos-config/hardware-configuration.nix
 .nix-channels
 .nix-profile
 .bash_logout
