@@ -22,4 +22,4 @@ Then: `nixos-switch`
 
 Next:
 1. Make a new ssh key for github: `ssh-keygen -t rsa -b 4096 -C "$USER+github@$(hostname)" -f github`, add it as deploy key here
-2. Replace this repo remote from http to git: `git remote set-url origin git@github.com:f-f/dotfiles.git`
+2. Replace this repo remote from http to git: `git remote set-url origin git@github.com:f-f/home.git`
