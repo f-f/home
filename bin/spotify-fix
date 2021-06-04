@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Reference: https://news.ycombinator.com/item?id=12914188
-sudo perl -pi -e 's/VACUUM;/xxxxxx;/g' /usr/bin/spotify

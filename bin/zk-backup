@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+: "${HC_TOKEN?Need to set HC_TOKEN}"
+
+cd /home/fabrizio/code/zettelkasten
+git pull origin master
+rsync -avhP --delete /home/fabrizio/Dropbox/zettelkasten/ /home/fabrizio/code/zettelkasten/content/
+curl "https://hc-ping.com/${HC_TOKEN}"
+git add .
+git commit -m "Daily update"
+git push origin master

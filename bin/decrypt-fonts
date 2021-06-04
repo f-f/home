@@ -1,3 +1,0 @@
-#!/bin/bash
-
-gpg2 --no-tty -q -d ~/dotfiles/cryptd/fonts.tar.gz.gpg | tar xzv -C ~/.fonts

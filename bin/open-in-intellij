@@ -1,5 +1,0 @@
-#!/bin/sh
-FILENAME=$1
-LINENUM=$2
-
-curl -silent -o /dev/null http://127.0.0.1:63330/file?file=$FILENAME\&line=$LINENUM
