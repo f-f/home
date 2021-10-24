@@ -7,11 +7,17 @@
 
   # Boot config
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.extraModulePackages = [ pkgs.linuxPackages.nvidia_x11 ];
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia_modeset" "nvidia" ];
   boot.supportedFilesystems = [ "zfs" ]; 
-  # boot.zfs = {
-  #  extraPools = [ "storage" ];
-  # };
+  boot.zfs = {
+   extraPools = [ "tank" ];
+  };
+
+  # See https://discourse.nixos.org/t/nixos-using-integrated-gpu-for-display-and-external-gpu-for-compute-a-guide/12345
+  environment.systemPackages = [ pkgs.linuxPackages.nvidia_x11 ];
 
   # ZFS config
   services.zfs = {

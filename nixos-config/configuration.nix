@@ -19,13 +19,14 @@
     ssh.startAgent = true;
   };
 
-  # Docker everywhere
+  # Docker and libvirt
   virtualisation = {
     docker.enable = true;
     docker.autoPrune = {
       enable = true;
       dates = "monthly";
     };
+    libvirtd.enable = true;
   };
 
   services = {
@@ -45,7 +46,7 @@
     uid = 1000;
     home = "/home/fabrizio";
     shell = "/run/current-system/sw/bin/zsh";
-    extraGroups = [ "wheel" "networkmanager" "docker" "dbus" "audio" "jackaudio" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" "dbus" "libvirtd" ];
   };
 
   
@@ -53,5 +54,5 @@
   security.sudo.wheelNeedsPassword = false;
 
   # NixOS version
-  system.stateVersion = "20.09";
+  system.stateVersion = "21.05";
 }
