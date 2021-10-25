@@ -5,7 +5,7 @@
     [
       ../hardware-configuration.nix
       ./local.nix
-      ./packages-base.nix
+      ./packages.nix
     ];
 
   time.timeZone = "Europe/Helsinki";
@@ -37,9 +37,16 @@
       publish.addresses = true;
       publish.workstation = true;
     };    
+    openssh = {
+      enable = true;
+      permitRootLogin = "no";
+      ports = [ 10000 ];
+      forwardX11 = true;
+      passwordAuthentication = false;
+      challengeResponseAuthentication = false;
+    };
   };
 
-  # Main user
   users.users.fabrizio = {
     isNormalUser = true;
     createHome = true;

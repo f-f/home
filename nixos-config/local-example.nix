@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./server.nix
-  ];
-
   # Bootloader
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;

@@ -1,5 +1,4 @@
-# Packages list - base
-## This config contains the base packages, command line stuff only.
+# Packages
 
 { config, pkgs, ... }:
 
@@ -11,6 +10,10 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    # Utilities
+    lm_sensors
+    ddrescue
+
     # Basic terminal
     jq
     curl
@@ -32,7 +35,6 @@ in {
     pbzip2
     wireguard
     direnv
-    ddrescue
 
     # Development
     leiningen
@@ -44,9 +46,9 @@ in {
     openjdk
     nodejs
     python3
-    spago
-    purescript
     docker_compose
+    unstable.spago
+    unstable.purescript
   ];
 }
 
