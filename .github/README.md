@@ -13,7 +13,7 @@ Config for NixOS only.
 1. `mv /etc/nixos/hardware-configuration.nix ~`
 1. Add channels:
  ```
- sudo nix-channel --add http://nixos.org/channels/nixos-20.09 nixos
+ sudo nix-channel --add http://nixos.org/channels/nixos-21.05 nixos
  sudo nix-channel --add http://nixos.org/channels/nixos-unstable nixos-unstable
  sudo nix-channel --update
  ```
@@ -21,5 +21,5 @@ Config for NixOS only.
 Then: `nixos-switch`
 
 Next:
-1. Make a new ssh key for github: `ssh-keygen -t rsa -b 4096 -C "$USER+github@$(hostname)" -f github`, add it as deploy key here
+1. Make a new ssh key for github: `ssh-keygen -t ed25519 -C "$USER+github@$(hostname)" -f github`, add it as deploy key here
 2. Replace this repo remote from http to git: `git remote set-url origin git@github.com:f-f/home.git`
