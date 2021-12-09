@@ -5,7 +5,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelModules = ["coretemp" "it87"];
+  boot.kernelModules = ["coretemp" "it87" "nct6775"];
   boot.extraModulePackages = [ pkgs.linuxPackages.nvidia_x11 ];
   boot.blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia_modeset" "nvidia" ];
   boot.supportedFilesystems = [ "zfs" ]; 

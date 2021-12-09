@@ -25,6 +25,7 @@
 !.gnupg/gpg.conf
 .gvfs
 .ipython/
+.jackdrc
 .lein/self-installs
 .lesshst
 .local/
