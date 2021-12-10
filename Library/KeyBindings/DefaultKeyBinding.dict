@@ -1,4 +1,0 @@
-{
-"~l" = ("insertText:", "\U03BB"); /* alt + l ~> lambda */
-"~-" = ("insertText:", "\U2192"); /* alt + - ~> right arrow */
-}
