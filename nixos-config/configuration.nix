@@ -53,8 +53,10 @@
     uid = 1000;
     home = "/home/fabrizio";
     shell = "/run/current-system/sw/bin/zsh";
+    group = "fabrizio";
     extraGroups = [ "wheel" "networkmanager" "docker" "dbus" "libvirtd" ];
   };
+  users.groups.fabrizio = {};
 
   
   # Passwordless sudo

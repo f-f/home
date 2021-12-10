@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let secrets = import ./secrets.nix;
+in
 {
   # Boot config
   # See: https://discourse.nixos.org/t/nixos-on-mirrored-ssd-boot-swap-native-encrypted-zfs/9215/5
@@ -57,15 +59,17 @@
   systemd.services.duckdns= {
     description = "Ping DuckDNS";
     after = [ "network.target" ];
+    path = with pkgs; [ bash curl ];
+    environment = {
+      HEALTHCHECKS_TOKEN = secrets.healthchecksToken;
+      DUCKDNS_TOKEN = secrets.duckdnsToken;
+    };
     serviceConfig = {
       Type = "oneshot";
       User = "fabrizio";
       Group = "fabrizio";
-      Environment = ''HEALTHCHECKS_TOKEN=${(import ./secrets.nix).healthchecksToken}'';
-      Environment = ''DUCKDNS_TOKEN=${(import ./secrets.nix).duckdnsToken}'';
       ExecStart = "/home/fabrizio/bin/duckdns";
     };
-    # path = with pkgs; [ bash curl ];
   };
   systemd.timers.duckdns = {
     description = "Ping DuckDNS";
