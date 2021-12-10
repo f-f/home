@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ $# -ne 1 ]; then
+  echo >&2 "Expected one argument, got $#"
+  echo >&2 "Usage: bright NUMBER-FROM-1-TO-100"
+  exit 1
+fi
+
+BRIGHTNESS=$1;
+DISPLAY_IDS=$(sudo ddcutil detect | grep "Display" | cut -d ' ' -f2);
+
+for DISPLAY_ID in $DISPLAY_IDS
+do
+  echo "Setting brightness for 'Display $DISPLAY_ID' to $BRIGHTNESS..";
+  sudo ddcutil setvcp 10 $BRIGHTNESS --display $DISPLAY_ID
+done
+# 
