@@ -31,6 +31,16 @@
   networking.hostName = "tiberius";  
   networking.firewall.enable = false;
   networking.hostId = "98546379";
+  networking.enableIPv6 = false;
+  networking.defaultGateway = { address = "192.168.8.1"; interface = "enp2s0"; metric = 10; };
+  networking.dhcpcd.extraConfig =
+  ''
+    interface enp1s0
+    metric 300
+    
+    interface enp2s0
+    metric 200
+  '';  
 
   users.users.fabrizio.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID6UcGI3prraCqsgl/A47zLxV15ZfAg0dDzB1C9b8RKC fabrizio+tiberius@caesar"
