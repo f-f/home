@@ -85,12 +85,29 @@ snap/*
 .zoom
 .vscode
 .saokerc
+.Rack/
+.audacity-data/
+.remapy/
+.parallel/
+.keras/
+.launchpadlib/
+.nvm/
+.dotnet/
+.cabal/
+.clojure/
+.drumgizmo/
+.gitlibs/
+.pylint.d/
+.vscode-server/
+.zynaddsubfx-bank-cache.xml
+
 
 # Histories, may contain sensitive data
 .*_history
 .zhistory
 .z
 .lein/repl-history
+.history
 
 # Definitely want to keep ssh config, definitely not keys
 .ssh/*
@@ -103,6 +120,8 @@ Documents/
 Downloads/
 Dropbox/
 Pictures/
+Music/
+vst/
 
 # Games
 Steam/
