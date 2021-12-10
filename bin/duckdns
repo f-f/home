@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+echo url="https://www.duckdns.org/update?domains=nilrecurring&token=${DUCKDNS_TOKEN}&ip=" | curl -k -o /tmp/duck.log -K -
+
+curl https://hc-ping.com/${HEALTHCHECKS_TOKEN}
+
