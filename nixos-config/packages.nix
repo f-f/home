@@ -35,6 +35,7 @@ in {
     pbzip2
     wireguard
     direnv
+    bind
 
     # Development
     leiningen
