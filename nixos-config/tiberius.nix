@@ -14,7 +14,7 @@ in
     { devices = ["nodev"]; path = "/boot-fallback"; }
   ];
   boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.devNodes = "/dev/disk/by-partuuid";
+  boot.zfs.devNodes = "/dev/disk/by-path";
 
   # This is for sensors to work
   boot.kernelModules = ["coretemp" "it87"];

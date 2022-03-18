@@ -11,10 +11,6 @@ in {
 
   environment.systemPackages = with pkgs; [
     # Utilities
-    lm_sensors
-    ddrescue
-
-    # Basic terminal
     jq
     curl
     wget
@@ -32,21 +28,21 @@ in {
     tokei
     shellcheck
     mtr
+    bat
     pbzip2
     wireguard
     direnv
     bind
+    lm_sensors
+    ddrescue
 
     # Development
-    leiningen
-    boot
     stack
     gcc
     git
-    maven
-    openjdk
     nodejs
     python3
+    erlang
     docker_compose
     unstable.spago
     unstable.purescript
