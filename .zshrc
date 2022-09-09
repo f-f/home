@@ -35,12 +35,6 @@ alias ob="obsidian &"
 # direnv
 eval "$(direnv hook zsh)"
 
-# Google Cloud SDK
-if [ "$(uname -s)" '==' "Darwin" ]; then
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-fi
-
 # Cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 

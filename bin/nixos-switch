@@ -1,4 +1,19 @@
 #!/usr/bin/env bash
 
-sudo nixos-rebuild switch -I nixos-config=/home/fabrizio/nixos-config/configuration.nix
+set -euo pipefail
 
+case "$(uname -s)" in
+  Darwin)
+    cd ~/nixos-config;
+    nix build .\#darwinConfigurations.`hostname`.system
+    ./result/sw/bin/darwin-rebuild switch --flake .
+  ;;
+
+  Linux)
+    sudo nixos-rebuild switch -I nixos-config=/home/fabrizio/nixos-config/configuration.nix
+    ;;
+
+  *)
+    echo 'Other OS?'
+  ;;
+esac

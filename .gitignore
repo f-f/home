@@ -100,6 +100,7 @@ snap/*
 .pylint.d/
 .vscode-server/
 .zynaddsubfx-bank-cache.xml
+.CFUserTextEncoding
 
 
 # Histories, may contain sensitive data
@@ -108,17 +109,29 @@ snap/*
 .z
 .lein/repl-history
 .history
+.zsh_sessions
 
 # Definitely want to keep ssh config, definitely not keys
 .ssh/*
 !.ssh/config
 
+# Nix
+.nixpkgs
+nixos-config/result
+
+# MacOS
+**/.DS_Store
+
 # Actual content
 code/
+Applications
 Desktop/
 Documents/
 Downloads/
 Dropbox/
+Library/
+Movies/
+Public/
 Pictures/
 Music/
 vst/
