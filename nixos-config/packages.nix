@@ -20,7 +20,7 @@ in {
     gnupg
     htop
     iftop
-    manpages
+    man-pages
     tldr
     graphviz
     gnumake
@@ -30,11 +30,12 @@ in {
     mtr
     bat
     pbzip2
-    wireguard
+    wireguard-tools
     direnv
     bind
     lm_sensors
     ddrescue
+    screen
 
     # Development
     stack
@@ -43,9 +44,7 @@ in {
     nodejs
     python3
     erlang
-    docker_compose
-    unstable.spago
-    unstable.purescript
+    docker-compose
   ];
 }
 
