@@ -36,6 +36,8 @@ in {
     lm_sensors
     ddrescue
     screen
+    tmux
+    magic-wormhole
 
     # Development
     stack
