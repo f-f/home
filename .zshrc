@@ -23,6 +23,7 @@ unalias rm
 alias rm="nocorrect rm"
 
 # Fix cp
+unalias cp
 setopt clobber
 
 # More alias
@@ -38,6 +39,8 @@ eval "$(direnv hook zsh)"
 # Cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Erlang
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
