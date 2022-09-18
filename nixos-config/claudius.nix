@@ -82,7 +82,7 @@ in
     wantedBy = [ "timers.target" ];
     partOf = [ "duckdns.service" ];
     timerConfig = {
-      OnBootSec = "2min";
+      OnBootSec = "10min";
       OnUnitActiveSec = "20min";
       Unit = "duckdns.service";
     };

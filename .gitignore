@@ -102,7 +102,7 @@ snap/*
 .zynaddsubfx-bank-cache.xml
 .CFUserTextEncoding
 .erlang.cookie
-
+.terminfo
 
 # Histories, may contain sensitive data
 .*_history
