@@ -22,6 +22,7 @@
   homebrew = {
     enable = true;
     global.brewfile = true;
+    brewPrefix = "/opt/homebrew/bin";
     onActivation = {
       autoUpdate = true;
       upgrade = true;
@@ -31,8 +32,16 @@
       "homebrew/core"
       "homebrew/cask"
       "homebrew/cask-drivers"
+      "f-f/homebrew-virt-manager"
+    ];
+    brews = [
+      "libvirt"
+      "virt-manager"
+      "virt-viewer"
     ];
     casks = [
+      "audacity"
+      "stats"
       "caffeine"
       "secretive"
       "little-snitch"
@@ -52,8 +61,10 @@
       "native-access"
       "splice"
       "vcv-rack"
-      # "amethyst"
-      # "ableton-live-suite"
+      "amethyst"
+      "ableton-live-suite"
+      "calibre"
+      "steam"
     ];
     masApps = {
       # Xcode = 497799835;
@@ -67,6 +78,7 @@
       home.stateVersion = "22.05";
 
       home.packages = with pkgs; [
+        arp-scan
         bat
         clang
         coreutils
@@ -84,6 +96,7 @@
         lorri
         m-cli
         nmap
+        nodejs
         python3
         ripgrep
         rsync
@@ -110,7 +123,7 @@
         enableZshIntegration = true;
       };
 
-      programs.htop = { 
+      programs.htop = {
         enable = true;
         settings.show_program_path = true;
       };

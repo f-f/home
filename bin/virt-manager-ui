@@ -4,17 +4,14 @@ set -euo pipefail
 
 case "$(uname -s)" in
   Darwin)
-    ADDRESS="d0:5:e4:36:57:7a"
+    XDG_DATA_DIRS=${XDG_DATA_DIRS}:/opt/homebrew/share /opt/homebrew/bin/virt-manager --no-fork
   ;;
 
   Linux)
-    ADDRESS="d0:05:e4:36:57:7a"
+    virt-manager
   ;;
 
   *)
     echo 'Other OS?'
-    exit 1
   ;;
 esac
-
-arp 192.168.8.1 | grep $ADDRESS

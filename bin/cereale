@@ -4,17 +4,14 @@ set -euo pipefail
 
 case "$(uname -s)" in
   Darwin)
-    ADDRESS="d0:5:e4:36:57:7a"
+    screen /dev/tty.usbserial-* 115200
   ;;
 
   Linux)
-    ADDRESS="d0:05:e4:36:57:7a"
+    cu -l /dev/ttyUSB0 -s 115200
   ;;
 
   *)
     echo 'Other OS?'
-    exit 1
   ;;
 esac
-
-arp 192.168.8.1 | grep $ADDRESS

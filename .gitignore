@@ -101,6 +101,7 @@ snap/*
 .vscode-server/
 .zynaddsubfx-bank-cache.xml
 .CFUserTextEncoding
+.erlang.cookie
 
 
 # Histories, may contain sensitive data
