@@ -59,9 +59,10 @@ fi
 ## Patch the Paradox theme to display different colors on different hosts
 function host_color {
   case "${HOST}" in
-    augustus) echo yellow ;;
+    augustus) echo red ;;
     caesar) echo green ;;
     claudius) echo cyan ;;
+    hadrian) echo yellow ;;
     nerva) echo magenta ;;
     trajan) echo red ;;
     *) echo white ;;
