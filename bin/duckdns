@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
-set -euxo pipefail
+set -euo pipefail
+: "$HEALTHCHECKS_TOKEN"
+: "$DUCKDNS_TOKEN"
 
-echo url="https://www.duckdns.org/update?domains=nilrecurring&token=${DUCKDNS_TOKEN}&ip=" | curl -k -o /tmp/duck.log -K -
+CURL_URL="https://www.duckdns.org/update?domains=nilrecurring&token=${DUCKDNS_TOKEN}"
+curl_out=`curl ${CURL_URL}`
 
-curl https://hc-ping.com/${HEALTHCHECKS_TOKEN}
+if [ $curl_out == "OK" ]; then
+  curl --retry 3 https://hc-ping.com/${HEALTHCHECKS_TOKEN}
+else
+  curl -fsS --retry 3 --data-raw "$curl_out" https://hc-ping.com/${HEALTHCHECKS_TOKEN}/fail
+fi
 
