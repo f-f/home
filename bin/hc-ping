@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+: "$HEALTHCHECKS_TOKEN"
+
+curl --retry 3 https://hc-ping.com/${HEALTHCHECKS_TOKEN}
+
