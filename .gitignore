@@ -103,6 +103,8 @@ snap/*
 .CFUserTextEncoding
 .erlang.cookie
 .terminfo
+.Trash
+.ngrok
 
 # Histories, may contain sensitive data
 .*_history
