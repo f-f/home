@@ -56,6 +56,9 @@ if test -f $BR; then
   source /home/fabrizio/.config/broot/launcher/bash/br
 fi
 
+# Homebrew
+export PATH="$PATH:/opt/homebrew/bin"
+
 ## Patch the Paradox theme to display different colors on different hosts
 function host_color {
   case "${HOST}" in
@@ -65,6 +68,7 @@ function host_color {
     hadrian) echo yellow ;;
     nerva) echo magenta ;;
     trajan) echo red ;;
+    nero) echo blue ;;
     *) echo white ;;
   esac
 }

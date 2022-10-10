@@ -2,7 +2,7 @@
 {
   networking.hostName = "hadrian";
 
-  nix.package = pkgs.nixFlakes;
+  nix.package = pkgs.nixVersions.stable;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
   
@@ -35,11 +35,15 @@
       "f-f/homebrew-virt-manager"
     ];
     brews = [
+      "mpi4py"
+      "magic-wormhole"
       "libvirt"
       "virt-manager"
       "virt-viewer"
     ];
     casks = [
+      "skype"
+      "inkscape"
       "audacity"
       "stats"
       "caffeine"
@@ -102,6 +106,7 @@
         rsync
         silver-searcher
         terminal-notifier
+        tokei
         tldr
         wget
         youtube-dl
