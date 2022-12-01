@@ -131,7 +131,7 @@ zstyle ':prezto:module:prompt' pwd-length 'short'
 #
 
 # Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh:load' identities 'augustus' 'claudius' 'domitian' 'nerva' 'gitlab' 'github'
+zstyle ':prezto:module:ssh:load' identities 'augustus' 'claudius' 'domitian' 'nerva' 'gitlab' 'github' 'github-id3as'
 
 #
 # Syntax Highlighting

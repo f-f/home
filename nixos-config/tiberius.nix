@@ -54,7 +54,7 @@ in
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID6UcGI3prraCqsgl/A47zLxV15ZfAg0dDzB1C9b8RKC fabrizio+tiberius@caesar"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMZLEPCkzxJwC5nEtDWyMatLnQYKVe/V2fbP/iIBeecj fabrizio+tiberius@augustus"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILFbvK96xBIc8OH147+Kv7k/0DG1HeHSngD6Vcgx4OwW fabrizio+tiberius@claudius"
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLXb5QsPib83bd+TOAmtRekYOrqXzaNmC7mUjHvixzUeUv4ZB8liwU4lxRrV9Ak5YotYc3T4Ct9QL2Gp7QG7kSQ= tiberius@secretive.hadrian.local"
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLXb5QsPib83bd+TOAmtRekYOrqXzaNmC7mUjHvixzUeUv4ZB8liwU4lxRrV9Ak5YotYc3T4Ct9QL2Gp7QG7kSQ= tiberius@secretive.hadrianus.local"
   ];
 
   systemd.services.duckdns= {

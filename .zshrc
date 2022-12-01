@@ -57,7 +57,7 @@ if test -f $BR; then
 fi
 
 # Homebrew
-export PATH="$PATH:/opt/homebrew/bin"
+export PATH="/opt/homebrew/bin:$PATH"
 
 ## Patch the Paradox theme to display different colors on different hosts
 function host_color {
@@ -65,7 +65,7 @@ function host_color {
     augustus) echo red ;;
     caesar) echo green ;;
     claudius) echo cyan ;;
-    hadrian) echo yellow ;;
+    hadrianus) echo yellow ;;
     nerva) echo magenta ;;
     trajan) echo red ;;
     nero) echo blue ;;

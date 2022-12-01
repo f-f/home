@@ -11,14 +11,14 @@
   };
 
   outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs: {
-    darwinConfigurations.hadrian = darwin.lib.darwinSystem {
+    darwinConfigurations.hadrianus = darwin.lib.darwinSystem {
       specialArgs = {
         nix-env-config.os = "darwin";
       };
       system = "aarch64-darwin";
       modules = [
         home-manager.darwinModules.home-manager
-        ./hadrian.nix
+        ./hadrianus.nix
       ];
     };
   };

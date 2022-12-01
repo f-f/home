@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  networking.hostName = "hadrian";
+  networking.hostName = "hadrianus";
 
   nix.package = pkgs.nixVersions.stable;
   nixpkgs.config.allowUnfree = true;
@@ -35,13 +35,22 @@
       "f-f/homebrew-virt-manager"
     ];
     brews = [
+      "gcc"
+      "openmpi"
       "mpi4py"
+      "taglib"
       "magic-wormhole"
       "libvirt"
       "virt-manager"
       "virt-viewer"
     ];
     casks = [
+      "loopback"
+      "slack"
+      "zoom"
+      "vlc"
+      "rectangle"
+      "plugdata"
       "skype"
       "inkscape"
       "audacity"
@@ -83,6 +92,7 @@
 
       home.packages = with pkgs; [
         arp-scan
+        awscli2
         bat
         clang
         coreutils
@@ -96,6 +106,7 @@
         gnumake
         gnupg
         iftop
+        jc
         jq
         lorri
         m-cli
