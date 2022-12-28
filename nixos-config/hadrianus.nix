@@ -45,6 +45,7 @@
       "virt-viewer"
     ];
     casks = [
+      "krita"
       "loopback"
       "slack"
       "zoom"
@@ -74,7 +75,6 @@
       "native-access"
       "splice"
       "vcv-rack"
-      "amethyst"
       "ableton-live-suite"
       "calibre"
       "steam"
