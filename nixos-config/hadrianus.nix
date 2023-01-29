@@ -5,7 +5,7 @@
   nix.package = pkgs.nixVersions.stable;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
-  
+
   programs.zsh.enable = true;
   programs.nix-index.enable = true;
 
@@ -35,49 +35,47 @@
       "f-f/homebrew-virt-manager"
     ];
     brews = [
-      "gcc"
-      "openmpi"
-      "mpi4py"
-      "taglib"
       "magic-wormhole"
       "libvirt"
       "virt-manager"
       "virt-viewer"
     ];
     casks = [
-      "krita"
-      "loopback"
-      "slack"
-      "zoom"
-      "vlc"
-      "rectangle"
-      "plugdata"
-      "skype"
-      "inkscape"
+      "ableton-live-suite"
       "audacity"
-      "stats"
       "caffeine"
-      "secretive"
-      "little-snitch"
-      "spotify"
+      "calibre"
+      "crossover"
+      "discord"
       "dropbox"
       "firefox"
+      "fl-studio"
       "google-chrome"
-      "visual-studio-code"
-      "discord"
+      "iina"
+      "inkscape"
       "keepassxc"
       "kitty"
-      "microsoft-outlook"
+      "krita"
+      "little-snitch"
+      "loopback"
       "mailspring"
-      "telegram"
-      "iina"
-      "obsidian"
+      "microsoft-outlook"
       "native-access"
+      "obsidian"
+      "plugdata"
+      "rectangle"
+      "secretive"
+      "skype"
+      "slack"
       "splice"
-      "vcv-rack"
-      "ableton-live-suite"
-      "calibre"
+      "spotify"
+      "stats"
       "steam"
+      "telegram"
+      "vcv-rack"
+      "visual-studio-code"
+      "vlc"
+      "zoom"
     ];
     masApps = {
       # Xcode = 497799835;
