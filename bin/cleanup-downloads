@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+DOWNLOADS_DIR=/Users/fabrizio/Downloads
+DAYS_OLD=14
+AMOUNT=$(find $DOWNLOADS_DIR -type f -mtime +$DAYS_OLD | wc -l | xargs)
+
+if [ $AMOUNT == "0" ]; then
+  echo "Nothing to clean"
+  exit 0
+fi
+
+FILES=""
+while IFS= read -r -d '' FILE; do
+  BASENAME=$(basename "$FILE")
+  FILES="${FILES} \n ${BASENAME}"
+  echo $BASENAME
+done < <(find $DOWNLOADS_DIR -type f -mtime +$DAYS_OLD -print0)
+
+osascript -e "display dialog \"Found $AMOUNT downloads older than $DAYS_OLD days, will delete them once you confirm:\n$FILES\" buttons {\"OK\"} default button \"OK\" with title \"Daily Downloads Cleanup\" with icon POSIX file \"/System/Library/CoreServices/Dock.app/Contents/Resources/trashfull.png\""
+
+find $DOWNLOADS_DIR -type f -mtime +$DAYS_OLD -delete

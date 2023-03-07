@@ -106,6 +106,7 @@ snap/*
 .terminfo
 .Trash
 .ngrok
+*.log
 
 # Histories, may contain sensitive data
 .*_history
@@ -114,6 +115,7 @@ snap/*
 .lein/repl-history
 .history
 .zsh_sessions
+.bash_sessions
 
 # Definitely want to keep ssh config, definitely not keys
 .ssh/*
