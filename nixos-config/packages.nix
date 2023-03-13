@@ -38,6 +38,7 @@ in {
     screen
     tmux
     magic-wormhole
+    file
 
     # Development
     stack

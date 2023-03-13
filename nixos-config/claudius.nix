@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 let secrets = import ./secrets.nix;
+    zfsNotifyCmd = pkgs.writeShellScript "zfsNotify.sh" ''
+  INPUT=$(</dev/stdin)
+  echo "$INPUT" | grep "errors: No known data errors"
+  ZFS_ERR=$?
+  curl -fsS -m 10 --retry 5 --data-raw "$INPUT" https://hc-ping.com/${secrets.zfsToken}/$ZFS_ERR
+  '';
 in
 {
   # Boot config
@@ -13,6 +19,9 @@ in
 
   # Activate the serial
   boot.kernelParams = ["console=tty0" "console=ttyS0,115200"];
+
+  # Virtualisation
+  security.polkit.enable = true;
 
   # ZFS stuff
   boot.supportedFilesystems = [ "zfs" ]; 
@@ -28,7 +37,19 @@ in
     };
     autoScrub = {
       enable = true;
-      interval = "monthly";
+      # Run on the first Monday of the month
+      # Use `systemd-analyze calendar $INTERVAL` to validate correctness
+      interval = "Mon *-*-1..7 06:00:00";
+    };
+    trim = {
+      enable = true;
+      interval = "Fri *-*-* 11:11:11";
+    };
+    zed.settings = {
+      ZED_EMAIL_ADDR = [ "root" ];
+      ZED_EMAIL_PROG = zfsNotifyCmd.outPath;
+      ZED_NOTIFY_VERBOSE = true;
+      ZED_SCRUB_AFTER_RESILVER = true;
     };
   };
 
