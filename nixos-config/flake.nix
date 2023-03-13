@@ -14,11 +14,23 @@
     darwinConfigurations.hadrianus = darwin.lib.darwinSystem {
       specialArgs = {
         nix-env-config.os = "darwin";
+        hostname = "hadrianus";
       };
       system = "aarch64-darwin";
       modules = [
         home-manager.darwinModules.home-manager
-        ./hadrianus.nix
+        ./macos.nix
+      ];
+    };
+    darwinConfigurations.tiberius = darwin.lib.darwinSystem {
+      specialArgs = {
+        nix-env-config.os = "darwin";
+        hostname = "tiberius";
+      };
+      system = "aarch64-darwin";
+      modules = [
+        home-manager.darwinModules.home-manager
+        ./macos.nix
       ];
     };
   };

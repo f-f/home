@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, hostname, ... }:
 let
   brewPkgs = [
+    "fileicon"
     "magic-wormhole"
     "libvirt"
     "virt-manager"
@@ -83,7 +84,7 @@ let
 in
 
 {
-  networking.hostName = "hadrianus";
+  networking.hostName = hostname;
 
   nix.package = pkgs.nixVersions.stable;
   nixpkgs.config.allowUnfree = true;

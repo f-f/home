@@ -67,15 +67,19 @@ function host_color {
     claudius) echo cyan ;;
     hadrianus) echo yellow ;;
     nerva) echo magenta ;;
-    trajan) echo red ;;
+    trajan) echo 166 ;; # orange
     nero) echo blue ;;
+    tiberius) echo 118 ;; # limegreen
     *) echo white ;;
   esac
 }
 
+# Few more colors: 81 turquoise, 135 purple, 161 hotpink
+
+
 function prompt_paradox_build_prompt {
-  prompt_paradox_start_segment black default '%(?::%F{red}✘ )%(!:%F{yellow}⚡ :)%(1j:%F{cyan}⚙ :)%F{blue}%n%F{white}@%F{$(host_color)}%m%f'
-  prompt_paradox_start_segment blue black '$_prompt_paradox_pwd'
+  prompt_paradox_start_segment black default '%(?::%F{red}✘ )%(!:%F{yellow}⚡ :)%(1j:%F{cyan}⚙ :)%F{81}%n%F{white}@%F{$(host_color)}%m%f'
+  prompt_paradox_start_segment 81 black '$_prompt_paradox_pwd'
 
   if [[ -n "$git_info" ]]; then
     prompt_paradox_start_segment $(host_color) black '${(e)git_info[ref]}${(e)git_info[status]}'
