@@ -78,8 +78,9 @@ function host_color {
 
 
 function prompt_paradox_build_prompt {
-  prompt_paradox_start_segment black default '%(?::%F{red}✘ )%(!:%F{yellow}⚡ :)%(1j:%F{cyan}⚙ :)%F{81}%n%F{white}@%F{$(host_color)}%m%f'
-  prompt_paradox_start_segment 81 black '$_prompt_paradox_pwd'
+  prompt_paradox_start_segment white black '%F{163}%D{%H}%F{176}:%F{163}%D{%M}%F{176}:%F{163}%D{%S}%f'
+  prompt_paradox_start_segment black default '%(?::%F{red}✘ )%(!:%F{yellow}⚡ :)%(1j:%F{cyan}⚙ :)%F{75}%n%F{white}@%F{$(host_color)}%m%f'
+  prompt_paradox_start_segment 75 black '$_prompt_paradox_pwd'
 
   if [[ -n "$git_info" ]]; then
     prompt_paradox_start_segment $(host_color) black '${(e)git_info[ref]}${(e)git_info[status]}'
@@ -91,3 +92,5 @@ function prompt_paradox_build_prompt {
 
   prompt_paradox_end_segment
 }
+
+RPROMPT=''
