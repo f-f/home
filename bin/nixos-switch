@@ -10,7 +10,9 @@ case "$(uname -s)" in
   ;;
 
   Linux)
-    sudo nixos-rebuild switch -I nixos-config=/home/fabrizio/nixos-config/configuration.nix
+    cd ~/nixos-config;
+    sudo nixos-rebuild switch --flake .\#`hostname`
+    # sudo nixos-rebuild switch -I nixos-config=/home/fabrizio/nixos-config/configuration.nix
     ;;
 
   *)

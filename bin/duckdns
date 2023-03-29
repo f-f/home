@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source $SECRETS_LOCATION
+
 set -euo pipefail
 : "$HEALTHCHECKS_TOKEN"
 : "$DUCKDNS_TOKEN"

@@ -3,10 +3,15 @@
 {
   imports =
     [
-      ../hardware-configuration.nix
-      ./local.nix
       ./packages.nix
     ];
+
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
   time.timeZone = "Europe/Helsinki";
 
