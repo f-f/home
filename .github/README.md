@@ -8,6 +8,13 @@ Config for NixOS only.
 
 1. Clone this repo in the home folder: `git clone https://github.com/f-f/home.git ~`
 1. Fetch everything: `cd ~ && git submodule update --init --recursive --remote`
+1. Add the fzf module:
+    ```bash
+    mkdir -p .zprezto/contrib && cd $_
+    git clone https://github.com/gpanders/fzf-prezto.git fzf
+    cd fzf
+    git submodule update --init
+    ```
 1. Write down the config for the new machine, start from the example: `cd ~/nixos-config && cp local-example.nix $(hostname).nix`, and integrate with what's in `/etc/nixos/configuration.nix`
 1. Import it as a local configuration: `echo "import ./$(hostname).nix" > local.nix`
 1. `mv /etc/nixos/hardware-configuration.nix ~`

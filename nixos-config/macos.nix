@@ -56,7 +56,7 @@ let
     curl
     diff-so-fancy
     fd
-    (ffmpeg-full.override {game-music-emu = null;})
+    (ffmpeg-full.override { withGme = false; })
     fzf
     git-lfs
     git-filter-repo
@@ -123,7 +123,7 @@ in
           source ${secrets}
           /Users/fabrizio/bin/zk-backup
         '';
-        serviceConfig = (runEvery 86400) // { RunAtLoad = true; StandardOutPath = "/Users/fabrizio/backstdout.log"; StandardErrorPath = "/Users/fabrizio/backstderr.log"; };
+        serviceConfig = (runEvery 86400) // { RunAtLoad = true; UserName = "fabrizio"; StandardOutPath = "/Users/fabrizio/backstdout.log"; StandardErrorPath = "/Users/fabrizio/backstderr.log"; };
       };
       cleanDownloads = {
         script = "/Users/fabrizio/bin/cleanup-downloads";
@@ -176,6 +176,10 @@ in
       programs.fzf = {
         enable = true;
         enableZshIntegration = true;
+        changeDirWidgetCommand = "${pkgs.fd}/bin/fd --type d";
+        defaultCommand = "${pkgs.fd}/bin/fd --type file --hidden --exclude .git";
+        fileWidgetCommand = "${pkgs.fd}/bin/fd --type file --hidden --exclude .git";
+        fileWidgetOptions = [ "--preview '${pkgs.bat}/bin/bat --style=numbers --color=always {}'" ];
       };
 
       programs.htop = {

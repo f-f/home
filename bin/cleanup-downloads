@@ -11,10 +11,22 @@ if [ $AMOUNT == "0" ]; then
   exit 0
 fi
 
+# Initialise a counter
+COUNTER=0
+
 FILES=""
 while IFS= read -r -d '' FILE; do
   BASENAME=$(basename "$FILE")
-  FILES="${FILES} \n ${BASENAME}"
+  # Increment counter here
+  COUNTER=$((COUNTER+1))
+  # Add new file if counter is less than 20
+  if [ $COUNTER -lt 20 ]; then
+    FILES="${FILES} \n ${BASENAME}"
+  fi
+  # If counter is 20, add ellipsis
+  if [ $COUNTER == 20 ]; then
+    FILES="${FILES} \n ..."
+  fi
   echo $BASENAME
 done < <(find $DOWNLOADS_DIR -type f -mtime +$DAYS_OLD -print0)
 
