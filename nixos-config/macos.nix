@@ -10,6 +10,7 @@ let
   brewCasks = [
     "ableton-live-suite"
     "audacity"
+    "bluesnooze"
     "caffeine"
     "calibre"
     "crossover"
@@ -26,6 +27,7 @@ let
     "launchcontrol"
     "little-snitch"
     "loopback"
+    "lunar"
     "mailspring"
     "microsoft-outlook"
     "native-access"
@@ -65,7 +67,7 @@ let
     iftop
     jc
     jq
-    lorri
+    # lorri
     m-cli
     nmap
     nodejs
@@ -97,7 +99,7 @@ in
 
   # Recreate /run/current-system symlink after boot
   services.activate-system.enable = true;
-  services.lorri.enable = true;
+  # services.lorri.enable = true;
   services.nix-daemon.enable = true;
 
   # Add ability to used TouchID for sudo authentication

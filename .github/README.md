@@ -46,7 +46,7 @@ nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
 nix-env -iA nixpkgs.nixFlakes
 
 # Update /etc/nix/nix.conf and add:
-# experimental-features = nix-command flakes 
+# experimental-features = nix-command flakes
 
 # From ~/dev/nix-env (where the root flake.nix exists)
 nixos-switch
@@ -57,3 +57,7 @@ Useful reads:
 - https://gist.github.com/jmatsushita/5c50ef14b4b96cb24ae5268dab613050
 - https://github.com/srstrong/nix-env
 - https://daiderd.com/nix-darwin/manual/index.html
+
+
+TODO: refactor readme. With the flakes it's not quite the right approach
+Reference this link: https://colinramsay.co.uk/2021/10/19/migrating-a-nixos-install-to-flakes.html

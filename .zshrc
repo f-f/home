@@ -94,3 +94,5 @@ function prompt_paradox_build_prompt {
 }
 
 RPROMPT=''
+
+export PATH="$PATH:$HOME/.local/bin"
