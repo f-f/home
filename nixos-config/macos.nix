@@ -52,6 +52,7 @@ let
     "spotify"
     "stats"
     "steam"
+    "syncthing"
     "teensy"
     "telegram"
     "vcv-rack"
