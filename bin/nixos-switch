@@ -2,15 +2,14 @@
 
 set -euo pipefail
 
+cd ~/nixos-config;
 case "$(uname -s)" in
   Darwin)
-    cd ~/nixos-config;
     nix build .\#darwinConfigurations.`hostname`.system
     ./result/sw/bin/darwin-rebuild switch --flake .
   ;;
 
   Linux)
-    cd ~/nixos-config;
     sudo nixos-rebuild switch --flake .\#`hostname`
     # sudo nixos-rebuild switch -I nixos-config=/home/fabrizio/nixos-config/configuration.nix
     ;;

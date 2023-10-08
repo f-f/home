@@ -1,15 +1,26 @@
 { pkgs, hostname, ... }:
 let
   brewPkgs = [
+    "autoconf"
+    "automake"
+    "czkawka"
+    "glib"
+    "pkg-config"
     "fileicon"
     "magic-wormhole"
     "libvirt"
+    "libusb"
+    "macchanger"
+    "openocd"
     "virt-manager"
     "virt-viewer"
+    "youtube-dl"
   ];
   brewCasks = [
     "ableton-live-suite"
+    "arduino"
     "audacity"
+    "bartender"
     "bluesnooze"
     "caffeine"
     "calibre"
@@ -29,18 +40,19 @@ let
     "loopback"
     "lunar"
     "mailspring"
-    "microsoft-outlook"
     "native-access"
     "obsidian"
     "plugdata"
     "rectangle"
     "secretive"
+    "shifty"
     "skype"
     "slack"
     "splice"
     "spotify"
     "stats"
     "steam"
+    "teensy"
     "telegram"
     "vcv-rack"
     "visual-studio-code"
@@ -80,7 +92,7 @@ let
     tldr
     tree
     wget
-    youtube-dl
+    yq
   ];
   secrets = "/Users/fabrizio/nixos-config/secrets.sh";
 in
@@ -148,6 +160,7 @@ in
       "homebrew/cask"
       "homebrew/cask-drivers"
       "f-f/homebrew-virt-manager"
+      "acrogenesis/macchanger"
     ];
     brews = brewPkgs;
     casks = brewCasks;

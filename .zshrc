@@ -58,6 +58,7 @@ fi
 
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
+export XDG_DATA_DIRS="/opt/homebrew/share:$XDG_DATA_DIRS"
 
 ## Patch the Paradox theme to display different colors on different hosts
 function host_color {
