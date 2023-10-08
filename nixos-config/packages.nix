@@ -39,6 +39,8 @@ in {
     tmux
     magic-wormhole
     file
+    httm
+    fzf
 
     # Development
     stack

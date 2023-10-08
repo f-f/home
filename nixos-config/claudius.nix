@@ -31,6 +31,7 @@ in
   boot.zfs = {
    extraPools = [ "tank" ];
   };
+  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   fileSystems."/" =
     { device = "system/local/root";
