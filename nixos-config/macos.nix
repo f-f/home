@@ -33,6 +33,7 @@ let
     "iina"
     "inkscape"
     "keepassxc"
+    "kicad"
     "kitty"
     "krita"
     "launchcontrol"
@@ -104,6 +105,9 @@ in
   nix.package = pkgs.nixVersions.stable;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
 
   programs.zsh.enable = true;
   programs.nix-index.enable = true;
@@ -175,7 +179,7 @@ in
     useUserPackages = true;
     users.fabrizio = { pkgs, ... }: {
       home.stateVersion = "22.05";
-
+      home.homeDirectory = pkgs.lib.mkForce "/Users/fabrizio";
       home.packages = nixPkgs;
 
       # https://github.com/nix-community/home-manager/issues/423
