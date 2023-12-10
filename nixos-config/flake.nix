@@ -2,7 +2,7 @@
   description = "f-f's nix stuffs";
 
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixos-22.11;
+    nixpkgs.url = github:nixos/nixpkgs/nixos-23.05;
     nixpkgs-unstable.url = github:nixos/nixpkgs/nixpkgs-unstable;
     darwin.url = github:lnl7/nix-darwin;
     home-manager.url = github:nix-community/home-manager;

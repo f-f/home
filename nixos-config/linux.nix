@@ -44,11 +44,13 @@
     };    
     openssh = {
       enable = true;
-      permitRootLogin = "no";
       ports = [ 10000 ];
-      forwardX11 = true;
-      passwordAuthentication = false;
-      kbdInteractiveAuthentication = false;
+      settings = {
+        PermitRootLogin = "no";
+        X11Forwarding = true;
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+      };
     };
   };
 
@@ -68,5 +70,5 @@
   security.sudo.wheelNeedsPassword = false;
 
   # NixOS version
-  system.stateVersion = "21.05";
+  system.stateVersion = "23.05";
 }

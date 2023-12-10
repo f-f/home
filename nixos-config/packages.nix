@@ -41,6 +41,7 @@ in {
     file
     httm
     fzf
+    traceroute
 
     # Development
     stack
