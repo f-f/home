@@ -7,6 +7,7 @@ let
     "glib"
     "pkg-config"
     "fileicon"
+    "gnu-tar"
     "magic-wormhole"
     "libvirt"
     "libusb"
@@ -24,6 +25,7 @@ let
     "bluesnooze"
     "caffeine"
     "calibre"
+    "ckan"
     "crossover"
     "discord"
     "dropbox"
@@ -49,6 +51,7 @@ let
     "shifty"
     "skype"
     "slack"
+    "sonos"
     "splice"
     "spotify"
     "stats"
@@ -73,16 +76,18 @@ let
     diff-so-fancy
     fd
     (ffmpeg-full.override { withGme = false; })
+    fq
     fzf
     git-lfs
     git-filter-repo
     gnumake
     gnupg
+    graphviz
     iftop
     jc
     jq
-    # lorri
     m-cli
+    mosquitto
     nmap
     nodejs
     python3
@@ -161,11 +166,10 @@ in
       cleanup = "zap";
     };
     taps = [
-      "homebrew/core"
-      "homebrew/cask"
       "homebrew/cask-drivers"
       "f-f/homebrew-virt-manager"
       "acrogenesis/macchanger"
+      "wader/tap"
     ];
     brews = brewPkgs;
     casks = brewCasks;
