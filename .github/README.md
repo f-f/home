@@ -38,18 +38,22 @@ It's a little harder to bootstrap Nix on macOS, but it can be done. After clonin
 # In case of M1
 softwareupdate --install-rosetta
 
-# Install brew, nix, darwin-nix, and flakes
+# Install brew and nix
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 curl -L https://nixos.org/nix/install | sh
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-./result/bin/darwin-installer
-nix-env -iA nixpkgs.nixFlakes
 
-# Update /etc/nix/nix.conf and add:
-# experimental-features = nix-command flakes
+# Set hostname
+export NEW_HOSTNAME=foo
+sudo scutil --set HostName $NEW_HOSTNAME
+sudo scutil --set LocalHostName $NEW_HOSTNAME
+sudo scutil --set ComputerName $NEW_HOSTNAME
 
-# From ~/dev/nix-env (where the root flake.nix exists)
+# At this point, edit nixos-config/flake.nix to add the new machine
+
+# Then:
 nixos-switch
+
+# Note: it will complain at first that the nix command requires experimental features, so that will require executing the script by hand adding the right flags, but after that it's all fine
 ```
 
 Useful reads:

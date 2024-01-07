@@ -42,5 +42,16 @@
         ./macos.nix
       ];
     };
+    darwinConfigurations.aurelius = darwin.lib.darwinSystem {
+      specialArgs = {
+        nix-env-config.os = "darwin";
+        hostname = "aurelius";
+      };
+      system = "aarch64-darwin";
+      modules = [
+        home-manager.darwinModules.home-manager
+        ./macos.nix
+      ];
+    };
   };
 }

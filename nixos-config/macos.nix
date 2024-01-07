@@ -166,7 +166,6 @@ in
       cleanup = "zap";
     };
     taps = [
-      "homebrew/cask-drivers"
       "f-f/homebrew-virt-manager"
       "acrogenesis/macchanger"
       "wader/tap"

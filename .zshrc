@@ -71,11 +71,12 @@ function host_color {
     trajan) echo 166 ;; # orange
     nero) echo blue ;;
     tiberius) echo 118 ;; # limegreen
+    aurelius) echo 135 ;; # purple
     *) echo white ;;
   esac
 }
 
-# Few more colors: 81 turquoise, 135 purple, 161 hotpink
+# Few more colors: 81 turquoise, 161 hotpink
 
 
 function prompt_paradox_build_prompt {
