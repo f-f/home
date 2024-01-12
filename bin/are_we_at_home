@@ -4,11 +4,11 @@ set -euo pipefail
 
 case "$(uname -s)" in
   Darwin)
-    ADDRESS="d0:5:e4:36:57:7a"
+    ADDRESS="c:72:74:37:99:d1"
   ;;
 
   Linux)
-    ADDRESS="d0:05:e4:36:57:7a"
+    ADDRESS="0c:72:74:37:99:d1"
   ;;
 
   *)
@@ -17,4 +17,4 @@ case "$(uname -s)" in
   ;;
 esac
 
-arp 192.168.8.1 | grep $ADDRESS
+arp 192.168.178.1 | grep $ADDRESS
