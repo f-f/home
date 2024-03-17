@@ -3,6 +3,7 @@ let
   brewPkgs = [
     "autoconf"
     "automake"
+    "bcrypt"
     "czkawka"
     "glib"
     "pkg-config"
@@ -18,7 +19,6 @@ let
     "youtube-dl"
   ];
   brewCasks = [
-    "ableton-live-suite"
     "arduino"
     "audacity"
     "bartender"
@@ -42,6 +42,7 @@ let
     "lunar"
     "native-access"
     "obsidian"
+    "orbstack"
     "plugdata"
     "rectangle"
     "secretive"
@@ -54,6 +55,7 @@ let
     "stats"
     "steam"
     "syncthing"
+    "tailscale"
     "teensy"
     "telegram"
     "vcv-rack"
@@ -75,6 +77,7 @@ let
     (ffmpeg-full.override { withGme = false; })
     fq
     fzf
+    github-cli
     git-lfs
     git-filter-repo
     gnumake
