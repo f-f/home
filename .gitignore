@@ -110,6 +110,8 @@ snap/*
 .cups
 .go
 .jssc
+.orbstack/
+OrbStack
 
 # Histories, may contain sensitive data
 .*_history
@@ -141,7 +143,6 @@ Downloads/
 Dropbox/
 Library/
 Movies/
-Public/
 Pictures/
 Music/
 vst/
