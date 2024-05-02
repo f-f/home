@@ -30,6 +30,7 @@ let
     "dropbox"
     "firefox"
     "fl-studio"
+    "gimp"
     "google-chrome"
     "inkscape"
     "keepassxc"
@@ -73,6 +74,7 @@ let
     coreutils
     curl
     diff-so-fancy
+    diffoscope
     fd
     (ffmpeg-full.override { withGme = false; })
     fq
@@ -241,6 +243,7 @@ in
   fonts.fonts = with pkgs; [
     fira-code
     font-awesome
+    google-fonts
     inconsolata
     nerdfonts
     recursive
