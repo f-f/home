@@ -86,7 +86,7 @@ function host_color2 {
     nerva)     echo 75 ;;
     trajan)    echo 75 ;;
     nero)      echo 75 ;;
-    tiberius)  echo 75 ;;
+    tiberius)  echo magenta ;;
     aurelius)  echo 11 ;; # yellow
     *)         echo 75 ;;
   esac
