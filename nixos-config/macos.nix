@@ -10,10 +10,12 @@ let
     "fileicon"
     "gnu-tar"
     "magic-wormhole"
+    "nicotine-plus"
     "libvirt"
     "libusb"
     "macchanger"
     "openocd"
+    "pandoc"
     "virt-manager"
     "virt-viewer"
     "youtube-dl"
@@ -21,7 +23,8 @@ let
   brewCasks = [
     "arduino"
     "audacity"
-    "bartender"
+    "balenaetcher"
+    "basictex"
     "bluesnooze"
     "caffeine"
     "calibre"
@@ -33,6 +36,8 @@ let
     "gimp"
     "google-chrome"
     "inkscape"
+    "imhex"
+    "jordanbaird-ice"
     "keepassxc"
     "kicad"
     "kitty"
@@ -45,6 +50,7 @@ let
     "obsidian"
     "orbstack"
     "plugdata"
+    "protonvpn"
     "rectangle"
     "secretive"
     "shifty"
@@ -59,11 +65,11 @@ let
     "tailscale"
     "teensy"
     "telegram"
-    "vcv-rack"
     "visual-studio-code"
     "vlc"
     "wireshark"
-    "xournal-plus-plus"
+    "xld"
+    "xournal++"
     "zoom"
   ];
   nixPkgs = with pkgs; [
@@ -182,6 +188,7 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "backup";
     users.fabrizio = { pkgs, ... }: {
       home.stateVersion = "22.05";
       home.homeDirectory = pkgs.lib.mkForce "/Users/fabrizio";
@@ -239,8 +246,7 @@ in
 
   };
 
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     fira-code
     font-awesome
     google-fonts
@@ -255,4 +261,6 @@ in
     enableKeyMapping = true;
     remapCapsLockToEscape = true;
   };
+
+  system.stateVersion = 5;
 }

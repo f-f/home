@@ -25,18 +25,20 @@
         };
       };
     };
-
-    darwinConfigurations.hadrianus = darwin.lib.darwinSystem {
-      specialArgs = {
-        nix-env-config.os = "darwin";
-        hostname = "hadrianus";
-      };
-      system = "aarch64-darwin";
+    nixosConfigurations.domitian = nixpkgs.lib.nixosSystem rec {
+      system = "x86_64-linux";
       modules = [
-        home-manager.darwinModules.home-manager
-        ./macos.nix
+        ./linux.nix
+        ./domitian.nix
       ];
+      specialArgs = {
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
     };
+
     darwinConfigurations.tiberius = darwin.lib.darwinSystem {
       specialArgs = {
         nix-env-config.os = "darwin";

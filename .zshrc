@@ -66,7 +66,7 @@ function host_color {
     augustus)  echo red ;;
     caesar)    echo green ;;
     claudius)  echo cyan ;;
-    hadrianus) echo yellow ;;
+    domitian)  echo yellow ;;
     nerva)     echo magenta ;;
     trajan)    echo 166 ;; # orange
     nero)      echo blue ;;
@@ -82,7 +82,7 @@ function host_color2 {
     augustus)  echo 75 ;;
     caesar)    echo 75 ;;
     claudius)  echo 75 ;;
-    hadrianus) echo 75 ;;
+    domitian)  echo 75 ;;
     nerva)     echo 75 ;;
     trajan)    echo 75 ;;
     nero)      echo 75 ;;

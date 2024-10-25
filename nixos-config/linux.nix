@@ -41,7 +41,7 @@
       publish.enable = true;
       publish.addresses = true;
       publish.workstation = true;
-    };    
+    };
     openssh = {
       enable = true;
       ports = [ 10000 ];
@@ -65,7 +65,7 @@
   };
   users.groups.fabrizio = {};
 
-  
+
   # Passwordless sudo
   security.sudo.wheelNeedsPassword = false;
 

@@ -40,9 +40,9 @@ in
   boot.kernelParams = ["console=tty0" "console=ttyS0,115200"];
 
   # ZFS stuff
-  boot.supportedFilesystems = [ "zfs" ]; 
+  boot.supportedFilesystems = [ "zfs" ];
   boot.zfs = {
-   extraPools = [ "tank" ];
+    extraPools = [ "tank" ];
   };
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
@@ -73,7 +73,7 @@ in
 
   # ZFS config
   services.zfs = {
-    autoSnapshot = { 
+    autoSnapshot = {
       enable = true;
       monthly = 1; # keep only one monthly instead of 12
     };
@@ -117,32 +117,32 @@ in
         password = "$2y$19$TEI/A4mw2DpcQtZ04it3/.V6rTb.bBX43arPHzVbungEDdzXqYK.6";
       };
       devices = {
-	"claudius" = { id = "YLAYFCC-SN3FHCY-QJ3JO5J-7NCE6S4-K727LOJ-QPBKXPU-DMHBI7U-Q4RIHAL"; };
-	"tiberius" = { id = "YXJJ7SB-DG7A2XC-LPOSC62-ENSPSRM-GKIC5KH-E4U3GNB-JXQCHTI-CNIMVQW"; };
-	"trajan" = { id = "MRHFQWO-VFGGALI-2E5RX2B-L6GDEDD-Z6MEJ2C-PQIVSFZ-TNKPZRD-JQDYVAB"; };
-	"aurelius" = { id = "2SDXURU-ZHJBJ3K-LNS5BP7-6X766CA-V7BBDTV-QYFRDR7-6PDRSKC-GIIT6AC"; };
+        "claudius" = { id = "YLAYFCC-SN3FHCY-QJ3JO5J-7NCE6S4-K727LOJ-QPBKXPU-DMHBI7U-Q4RIHAL"; };
+        "tiberius" = { id = "YXJJ7SB-DG7A2XC-LPOSC62-ENSPSRM-GKIC5KH-E4U3GNB-JXQCHTI-CNIMVQW"; };
+        "trajan" = { id = "MRHFQWO-VFGGALI-2E5RX2B-L6GDEDD-Z6MEJ2C-PQIVSFZ-TNKPZRD-JQDYVAB"; };
+        "aurelius" = { id = "2SDXURU-ZHJBJ3K-LNS5BP7-6X766CA-V7BBDTV-QYFRDR7-6PDRSKC-GIIT6AC"; };
       };
       folders = {
-	"Sync" = mkFolder {
-	  path = "/tank/sync/Sync";
-	  devices = [ "claudius" "tiberius" "aurelius" ];
-	};
-	"shared" = mkFolder {
-	  path = "/tank/sync/shared";
-	  devices = [ "claudius" "tiberius" "aurelius" ];
-	};
-	"DJ" = mkFolder {
-	  path = "/tank/sync/DJ";
-	  devices = [ "claudius" "trajan" "tiberius" "aurelius" ];
-	};
-	"ebooks" = mkFolder {
-	  path = "/tank/sync/ebooks";
-	  devices = [ "claudius" "tiberius" "aurelius" ];
-	};
-	"archive" = mkFolder {
-	  path = "/tank/sync/archive";
-	  devices = [ "claudius" "tiberius" ];
-	};
+        "Sync" = mkFolder {
+          path = "/tank/sync/Sync";
+          devices = [ "claudius" "tiberius" "aurelius" ];
+        };
+        "shared" = mkFolder {
+          path = "/tank/sync/shared";
+          devices = [ "claudius" "tiberius" "aurelius" ];
+        };
+        "DJ" = mkFolder {
+          path = "/tank/sync/DJ";
+          devices = [ "claudius" "trajan" "tiberius" "aurelius" ];
+        };
+        "ebooks" = mkFolder {
+          path = "/tank/sync/ebooks";
+          devices = [ "claudius" "tiberius" "aurelius" ];
+        };
+        "archive" = mkFolder {
+          path = "/tank/sync/archive";
+          devices = [ "claudius" "tiberius" ];
+        };
       };
     };
   };
