@@ -17,11 +17,6 @@ let secrets = "/home/fabrizio/nixos-config/secrets.sh";
 in
 {
   # Hardware config
-  imports =
-    [ (modulePath + "/installer/scan/not-detected.nix")
-    ];
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "coretemp" "it87" "nct6775" ];
   boot.extraModulePackages = [ ];
@@ -87,6 +82,7 @@ in
 
   # Networking
   networking.hostName = "domitian";
+  networking.hostId = "454f37c7";
   networking.enableIPv6 = false;
   networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
   networking.firewall.enable = false;
