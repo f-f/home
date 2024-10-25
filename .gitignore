@@ -168,3 +168,11 @@ nixos-config/hardware-configuration.nix
 .bashrc
 .profile
 .fonts
+
+# Some .bin files
+bin/docker
+bin/docker-compose
+bin/docker-credential-osxkeychain
+bin/kubectl
+bin/orb
+bin/orbctl

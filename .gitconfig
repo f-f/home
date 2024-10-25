@@ -9,6 +9,7 @@
 [core]
     excludesfile = ~/.gitignore
 	autocrlf = input
+	longpaths = true
 
 [diff "cbor"]
     textconv = cbor2diag.rb

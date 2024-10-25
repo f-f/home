@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, modulesPath, ... }:
 
 let secrets = "/home/fabrizio/nixos-config/secrets.sh";
     mkFolder = { path, devices, ...}:
@@ -16,50 +16,44 @@ let secrets = "/home/fabrizio/nixos-config/secrets.sh";
       };
 in
 {
+  # Hardware config
+  imports =
+    [ (modulePath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "mpt3sas" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" "coretemp" "it87" "nct6775" ];
   boot.extraModulePackages = [ ];
+
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/9ead2a01-0c0b-48c4-b88f-171cd4c7ac63";
+      fsType = "ext4";
+    };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/AFA2-E8E2";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  swapDevices = [ ];
+
+  networking.useDHCP = true;
+
+  nixpkgs.hostPlatform = "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
 
   # Boot config
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # This is for sensors to work
-  # boot.kernelModules = [ "kvm-intel" "coretemp" "it87" "nct6775"];
-
   # ZFS stuff
-  # boot.supportedFilesystems = [ "zfs" ];
+  boot.supportedFilesystems = [ "zfs" ];
   # boot.zfs = {
   #   extraPools = [ "tank" ];
   # };
-  # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-
-  # fileSystems."/" =
-  #   { device = "system/local/root";
-  #     fsType = "zfs";
-  #   };
-
-  # fileSystems."/nix" =
-  #   { device = "system/local/nix";
-  #     fsType = "zfs";
-  #   };
-
-  # fileSystems."/home" =
-  #   { device = "system/safe/home";
-  #     fsType = "zfs";
-  #   };
-
-  # fileSystems."/persist" =
-  #   { device = "system/safe/persist";
-  #     fsType = "zfs";
-  #   };
-
-  # fileSystems."/boot" =
-  #   { device = "/dev/disk/by-uuid/4E99-BB54";
-  #     fsType = "vfat";
-  #   };
+  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   # ZFS config
   # services.zfs = {
