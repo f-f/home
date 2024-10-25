@@ -149,12 +149,11 @@ in
 
   services.tailscale.enable = true;
 
-  
   # Virtualisation
   security.polkit.enable = true;
 
   # Networking
-  networking.hostName = "claudius";  
+  networking.hostName = "claudius";
   networking.hostId = "454f37c2";
   networking.enableIPv6 = false;
   networking.defaultGateway = {
