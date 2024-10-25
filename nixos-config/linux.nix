@@ -7,7 +7,7 @@
     ];
 
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -37,7 +37,7 @@
   services = {
     avahi = {
       enable = true;
-      nssmdns = true;
+      nssmdns4 = true;
       publish.enable = true;
       publish.addresses = true;
       publish.workstation = true;

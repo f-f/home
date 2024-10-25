@@ -1,12 +1,12 @@
 # Packages
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
-let unstable = import <nixos-unstable> { config.allowUnfree = true; };
-in {
-  # Nix non-kosher
-  nixpkgs.config = {
-    allowUnfree = true;
+{
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -42,6 +42,7 @@ in {
     httm
     fzf
     traceroute
+    tailscale
 
     # Development
     stack
