@@ -44,6 +44,12 @@
     traceroute
     tailscale
 
+    # For Syncoid
+    pv
+    mbuffer
+    lzop
+    zstd
+
     # Development
     stack
     gcc
