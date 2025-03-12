@@ -17,6 +17,7 @@ let
     "nicotine-plus"
     "openocd"
     "pandoc"
+    "qmk/qmk/qmk"
     "virt-manager"
     "virt-viewer"
     "youtube-dl"
@@ -55,6 +56,7 @@ let
     "native-access"
     "obs"
     "obsidian"
+    "ollama"
     "orbstack"
     "plugdata"
     "porting-kit"
@@ -124,7 +126,7 @@ in
 {
   networking.hostName = hostname;
 
-  nix.package = pkgs.nixVersions.stable;
+  nix.package = pkgs.nixVersions.latest;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
   nix.extraOptions = ''
@@ -136,13 +138,8 @@ in
 
   time.timeZone = "Europe/Helsinki";
 
-  # Recreate /run/current-system symlink after boot
-  services.activate-system.enable = true;
-  # services.lorri.enable = true;
-  services.nix-daemon.enable = true;
-
   # Add ability to used TouchID for sudo authentication
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   launchd =
     let
@@ -179,13 +176,14 @@ in
     brewPrefix = "/opt/homebrew/bin";
     onActivation = {
       autoUpdate = true;
-      upgrade = true;
+      upgrade = false;
       cleanup = "zap";
     };
     taps = [
       "f-f/homebrew-virt-manager"
       "acrogenesis/macchanger"
       "wader/tap"
+      "qmk/qmk"
     ];
     brews = brewPkgs;
     casks = brewCasks;
@@ -260,11 +258,10 @@ in
     font-awesome
     google-fonts
     inconsolata
-    nerdfonts
     recursive
     roboto
     roboto-mono
-  ];
+  ] ++ (builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts));
 
   system.keyboard = {
     enableKeyMapping = true;
@@ -272,4 +269,6 @@ in
   };
 
   system.stateVersion = 5;
+
+  ids.gids.nixbld = 30000;
 }
