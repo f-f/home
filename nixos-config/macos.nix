@@ -15,6 +15,7 @@ let
     "libusb"
     "macchanger"
     "nicotine-plus"
+    "ollama"
     "openocd"
     "pandoc"
     "qmk/qmk/qmk"
@@ -56,7 +57,6 @@ let
     "native-access"
     "obs"
     "obsidian"
-    "ollama"
     "orbstack"
     "plugdata"
     "porting-kit"
@@ -154,7 +154,7 @@ in
         serviceConfig.RunAtLoad = true;
         serviceConfig.KeepAlive = true;
       }; in {
-
+ 
     user.agents = {
       obsidianBackup = {
         script = ''
@@ -166,6 +166,19 @@ in
       cleanDownloads = {
         script = "/Users/fabrizio/bin/cleanup-downloads";
         serviceConfig = (runEvery 86400) // { RunAtLoad = true; };
+      };
+      ollama-serve = {
+        environment = {
+         OLLAMA_HOST = "0.0.0.0:11434";
+        };
+
+        command = "${pkgs.ollama}/bin/ollama serve";
+        serviceConfig = {
+          KeepAlive = true;
+          RunAtLoad = true;
+          StandardOutPath = "/tmp/ollama_launchd.out.log";
+          StandardErrorPath = "/tmp/ollama_launchd.err.log";
+        };
       };
     };
   };
@@ -202,10 +215,17 @@ in
       home.packages = nixPkgs;
 
       # https://github.com/nix-community/home-manager/issues/423
-      home.sessionVariables = {
-        PAGER = "less -R";
-        TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
-      };
+      home.sessionVariables =
+        let
+          kitty = pkgs.kitty.overrideAttrs (oldAttrs: {
+            # https://github.com/NixOS/nixpkgs/issues/388020
+           doInstallCheck = false;
+          });
+        in
+        {
+          PAGER = "less -R";
+          TERMINFO_DIRS = "${kitty.terminfo.outPath}/share/terminfo";
+        };
 
       programs.direnv = {
         enable = true;
