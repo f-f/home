@@ -143,45 +143,50 @@ in
 
   launchd =
     let
-      runEvery = StartInterval: {
+      defaultServiceConfig = scriptName: {
+        RunAtLoad = true;
+        StandardOutPath = "/tmp/launchd_${scriptName}_stdout.log";
+        StandardErrorPath = "/tmp/launchd_${scriptName}_stderr.log";
+      };
+
+      defaultDaemonConfig = scriptName: (defaultServiceConfig scriptName) // { KeepAlive = true; };
+
+      runEvery = StartInterval: scriptName: (defaultServiceConfig scriptName) // {
         inherit StartInterval;
         Nice = 5;
         LowPriorityIO = true;
         AbandonProcessGroup = true;
       };
-      runCommand = command: {
-        inherit command;
-        serviceConfig.RunAtLoad = true;
-        serviceConfig.KeepAlive = true;
-      }; in {
- 
-    user.agents = {
-      obsidianBackup = {
+
+      runBinScript = cadenceSeconds: binScriptName: {
         script = ''
           source ${secrets}
-          /Users/fabrizio/bin/zk-backup
+          /Users/fabrizio/bin/${binScriptName}
         '';
-        serviceConfig = (runEvery 86400) // { RunAtLoad = true; UserName = "fabrizio"; StandardOutPath = "/Users/fabrizio/backstdout.log"; StandardErrorPath = "/Users/fabrizio/backstderr.log"; };
+        serviceConfig = runEvery cadenceSeconds binScriptName;
       };
-      cleanDownloads = {
-        script = "/Users/fabrizio/bin/cleanup-downloads";
-        serviceConfig = (runEvery 86400) // { RunAtLoad = true; };
-      };
-      ollama-serve = {
-        environment = {
-         OLLAMA_HOST = "0.0.0.0:11434";
-        };
 
-        command = "${pkgs.ollama}/bin/ollama serve";
-        serviceConfig = {
-          KeepAlive = true;
-          RunAtLoad = true;
-          StandardOutPath = "/tmp/ollama_launchd.out.log";
-          StandardErrorPath = "/tmp/ollama_launchd.err.log";
-        };
-      };
+      runScriptDaily = runBinScript 86400;
+      runScriptHourly = runBinScript 3600;
+
+      # Things that are run only on the desktop, such as Ollama for code completion,
+      # and various iCloud -> Syncthing backups
+      tiberiusScripts = if hostname == "tiberius" then
+        {
+          obsidianBackup = runScriptDaily "obsidian-backup";
+          keepassBackup = runScriptHourly "keepass-backup";
+          ollama-serve = {
+            environment = { OLLAMA_HOST = "0.0.0.0:11434"; };
+            command = "${pkgs.ollama}/bin/ollama serve";
+            serviceConfig = defaultDaemonConfig "ollama";
+          };
+        } else {};
+
+    in {
+      user.agents = {
+        cleanupDownloads = runScriptDaily "cleanup-downloads";
+      } // tiberiusScripts;
     };
-  };
 
   homebrew = {
     enable = true;
@@ -219,7 +224,7 @@ in
         let
           kitty = pkgs.kitty.overrideAttrs (oldAttrs: {
             # https://github.com/NixOS/nixpkgs/issues/388020
-           doInstallCheck = false;
+            doInstallCheck = false;
           });
         in
         {
