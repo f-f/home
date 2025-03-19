@@ -73,10 +73,6 @@ in
 
   # ZFS config
   services.zfs = {
-    autoSnapshot = {
-      enable = true;
-      monthly = 1; # keep only one monthly instead of 12
-    };
     autoScrub = {
       enable = true;
       # Run on the first Monday of the month
@@ -92,6 +88,67 @@ in
       ZED_EMAIL_PROG = zfsNotifyCmd.outPath;
       ZED_NOTIFY_VERBOSE = true;
       ZED_SCRUB_AFTER_RESILVER = true;
+    };
+  };
+
+  # ZFS backups
+  services.sanoid = {
+    enable = true;
+    extraArgs = [ "--verbose" ];
+
+    datasets."tank/storage" = {
+      frequently = 0;
+      hourly = 36;
+      daily = 60;
+      monthly = 12;
+      yearly = 7;
+      autosnap = true;
+      autoprune = true;
+      recursive = true;
+    };
+
+    datasets."tank/sync" = {
+      frequently = 0;
+      hourly = 36;
+      daily = 60;
+      monthly = 12;
+      yearly = 2;
+      autosnap = true;
+      autoprune = true;
+      recursive = true;
+    };
+
+    datasets."tank/vms" = {
+      frequently = 0;
+      hourly = 0;
+      daily = 15;
+      monthly = 1;
+      yearly = 0;
+      autosnap = true;
+      autoprune = true;
+      recursive = true;
+    };
+  };
+
+  services.syncoid = {
+    enable = true;
+    commonArgs = [ "--no-sync-snap" "--sshport=10000" ];
+    localSourceAllow = [ "bookmark" "hold" "send" "mount" ];
+    sshKey = "/var/lib/syncoid/backup";
+    commands."tank/vms" = {
+      target = "fabrizio@domitian:tank2/backups/vms";
+      recursive = false;
+      sendOptions = "w";
+    };
+    commands."tank/sync" = {
+      target = "fabrizio@domitian:tank2/backups/sync";
+      recursive = false;
+      sendOptions = "w";
+    };
+    commands."tank/storage" = {
+      target = "fabrizio@domitian:tank2/backups/storage";
+      recursive = false;
+      sendOptions = "w";
     };
   };
 
@@ -133,7 +190,7 @@ in
         };
         "DJ" = mkFolder {
           path = "/tank/sync/DJ";
-          devices = [ "claudius" "trajan" "tiberius" "aurelius" ];
+          devices = [ "claudius" "tiberius" "aurelius" "trajan" ];
         };
         "ebooks" = mkFolder {
           path = "/tank/sync/ebooks";
@@ -142,6 +199,10 @@ in
         "archive" = mkFolder {
           path = "/tank/sync/archive";
           devices = [ "claudius" "tiberius" ];
+        };
+        "univelka" = mkFolder {
+          path = "/tank/sync/univelka";
+          devices = [ "claudius" "tiverius" "aurelius" ];
         };
       };
     };
@@ -192,7 +253,7 @@ in
   # DynamicDNS for functional.pizza
   services.ddclient = {
     enable = true;
-    configFile = "/tank/ddclient_namecheap.conf";
+    configFile = "/tank/storage/configs/ddclient_namecheap.conf";
   };
 
   # FIXME: reinstate coredns. By now I forgot whatever the issue was

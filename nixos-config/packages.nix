@@ -43,6 +43,8 @@
     fzf
     traceroute
     tailscale
+    rmlint
+    diskonaut
 
     # For Syncoid
     pv
