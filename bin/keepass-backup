@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+: "${KEEPASS_BACKUP_TOKEN?Need to set KEEPASS_BACKUP_TOKEN}"
+
+export HEALTHCHECKS_TOKEN=$KEEPASS_BACKUP_TOKEN
+
+CLOUD_DIR="/Users/fabrizio/Library/Mobile Documents/iCloud\~com\~strongbox/Documents/"
+BACKUP_DIR="/Users/fabrizio/sync/shared/backups/keepass"
+
+rsync -avhP "${CLOUD_DIR}" "${BACKUP_DIR}"
+
+echo "Keepass: backup completed successfully at $(date)"
+
+curl --retry 3 https://hc-ping.com/${HEALTHCHECKS_TOKEN}

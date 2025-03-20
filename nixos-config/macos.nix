@@ -127,11 +127,17 @@ in
   networking.hostName = hostname;
 
   nix.package = pkgs.nixVersions.latest;
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnsupportedSystem = true;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   programs.zsh.enable = true;
   programs.nix-index.enable = true;
