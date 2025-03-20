@@ -17,8 +17,9 @@
 
   # Common program configurations here
   programs = {
+    vim.enable = true;
     vim.defaultEditor = true;
-    bash.enableCompletion = true;
+    bash.completion.enable = true;
     java.enable = true;
     zsh.enable = true;
     ssh.startAgent = true;
@@ -68,7 +69,4 @@
 
   # Passwordless sudo
   security.sudo.wheelNeedsPassword = false;
-
-  # NixOS version
-  system.stateVersion = "23.05";
 }

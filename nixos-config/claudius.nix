@@ -44,7 +44,6 @@ in
   boot.zfs = {
     extraPools = [ "tank" ];
   };
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   fileSystems."/" =
     { device = "system/local/root";
@@ -202,7 +201,7 @@ in
         };
         "univelka" = mkFolder {
           path = "/tank/sync/univelka";
-          devices = [ "claudius" "tiverius" "aurelius" ];
+          devices = [ "claudius" "tiberius" "aurelius" ];
         };
       };
     };
@@ -407,4 +406,6 @@ in
       Unit = "duckdns.service";
     };
   };
+
+  system.stateVersion = "24.11";
 }
