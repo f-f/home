@@ -5,7 +5,7 @@ set -euo pipefail
 
 export HEALTHCHECKS_TOKEN=$OBSIDIAN_BACKUP_TOKEN
 
-CLOUD_DIR="/Users/fabrizio/Library/Mobile Documents/iCloud~md~obsidian/Documents/"
+CLOUD_DIR='/Users/fabrizio/Library/Mobile Documents/iCloud~md~obsidian/Documents/'
 BACKUP_DIR="/Users/fabrizio/sync/shared/backups/obsidian"
 
 rsync -avhP --delete "${CLOUD_DIR}" "${BACKUP_DIR}"

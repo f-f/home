@@ -130,11 +130,7 @@ in
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
+  nix.gc.automatic = true;
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
