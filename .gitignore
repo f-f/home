@@ -6,11 +6,13 @@
 /.bashrc
 /.boot/cache/
 /.buck
-/.cabal/
+/.bundle/
+/.cabal*/
 /.cache/
 /.cargo/
 /.cert/
 /.CFUserTextEncoding
+/.claude*
 /.clojure/
 /.compose-cache/
 /.config/

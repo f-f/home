@@ -10,7 +10,6 @@ let
     "fileicon"
     "gnu-tar"
     "magic-wormhole"
-    "nicotine-plus"
     "libvirt"
     "libusb"
     "macchanger"
@@ -21,7 +20,7 @@ let
     "qmk/qmk/qmk"
     "virt-manager"
     "virt-viewer"
-    "youtube-dl"
+    "yt-dlp"
   ];
   brewCasks = [
     "aldente"
@@ -33,7 +32,7 @@ let
     "caffeine"
     "calibre"
     "cardinal"
-    "ckan"
+    "ckan-app"
     "discord"
     "dropbox"
     "easyeda"
@@ -53,7 +52,6 @@ let
     "loopback"
     "lunar"
     "media-converter"
-    "microsoft-teams"
     "native-access"
     "obs"
     "obsidian"
@@ -65,20 +63,20 @@ let
     "rectangle"
     "secretive"
     "shifty"
-    "skype"
     "slack"
     "sonos"
     "splice"
     "spotify"
     "stats"
     "steam"
-    "syncthing"
-    "tailscale"
+    "syncthing-app"
+    "tailscale-app"
     "teensy"
     "telegram"
+    "todoist-app"
     "visual-studio-code"
     "vlc"
-    "wireshark"
+    "wireshark-app"
     "xld"
     "xournal++"
     "zoom"
@@ -103,6 +101,7 @@ let
     gnupg
     graphviz
     iftop
+    iodine
     jc
     jq
     m-cli
