@@ -17,6 +17,7 @@ let
     "ollama"
     "openocd"
     "pandoc"
+    "pinentry-mac"
     "qmk/qmk/qmk"
     "virt-manager"
     "virt-viewer"
@@ -33,6 +34,8 @@ let
     "calibre"
     "cardinal"
     "ckan-app"
+    "claude"
+    "crossover"
     "discord"
     "dropbox"
     "easyeda"
@@ -130,6 +133,16 @@ in
     experimental-features = nix-command flakes
   '';
   nix.gc.automatic = true;
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [
+      "https://cache.nixos.org"
+      "https://cache.iog.io"
+    ];
+    trusted-public-keys = [
+      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+    ];
+  };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;

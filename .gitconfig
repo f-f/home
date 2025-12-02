@@ -29,3 +29,5 @@
 	conflictStyle = diff3
 [diff]
 	algorithm = histogram
+[includeIf "gitdir:~/code/iog/"]
+	path = ~/.gitconfig-work

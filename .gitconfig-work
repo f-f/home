@@ -1,0 +1,8 @@
+[user]
+	name = Fabrizio Ferrai
+	email = fabrizio.ferrai@iohk.io
+	signingkey = fabrizio.ferrai@iohk.io
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
