@@ -24,6 +24,7 @@ let
     "yt-dlp"
   ];
   brewCasks = [
+    "affinity"
     "aldente"
     "arduino"
     "audacity"
@@ -130,10 +131,13 @@ in
 
   nix.package = pkgs.nixVersions.latest;
   nix.extraOptions = ''
-    experimental-features = nix-command flakes
+    keep-outputs = true
+    keep-derivations = true
   '';
   nix.gc.automatic = true;
+
   nix.settings = {
+    trusted-users = [ "@admin" ];
     experimental-features = [ "nix-command" "flakes" ];
     substituters = [
       "https://cache.nixos.org"
@@ -143,6 +147,9 @@ in
       "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
     ];
   };
+
+  ids.uids.nixbld = 350;
+  ids.gids.nixbld = 30000;
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
@@ -308,6 +315,4 @@ in
   };
 
   system.stateVersion = 5;
-
-  ids.gids.nixbld = 30000;
 }
