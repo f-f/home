@@ -14,7 +14,6 @@ let
     "libusb"
     "macchanger"
     "nicotine-plus"
-    "ollama"
     "openocd"
     "pandoc"
     "pinentry-mac"
@@ -65,7 +64,6 @@ let
     "protonvpn"
     "raspberry-pi-imager"
     "rectangle"
-    "secretive"
     "shifty"
     "slack"
     "sonos"
@@ -87,7 +85,6 @@ let
   ];
   nixPkgs = with pkgs; [
     arp-scan
-    awscli2
     bat
     clang
     coreutils
@@ -95,7 +92,6 @@ let
     diff-so-fancy
     diffoscope
     fd
-    (ffmpeg-full.override { withGme = false; })
     fq
     fzf
     github-cli
@@ -196,11 +192,11 @@ in
         {
           obsidianBackup = runScriptDaily "obsidian-backup";
           keepassBackup = runScriptHourly "keepass-backup";
-          ollama-serve = {
-            environment = { OLLAMA_HOST = "0.0.0.0:11434"; };
-            command = "${pkgs.ollama}/bin/ollama serve";
-            serviceConfig = defaultDaemonConfig "ollama";
-          };
+          # ollama-serve = {
+          #   environment = { OLLAMA_HOST = "0.0.0.0:11434"; };
+          #   command = "${pkgs.ollama}/bin/ollama serve";
+          #   serviceConfig = defaultDaemonConfig "ollama";
+          # };
         } else {};
 
     in {
@@ -315,4 +311,5 @@ in
   };
 
   system.stateVersion = 5;
+  system.primaryUser = "fabrizio";
 }

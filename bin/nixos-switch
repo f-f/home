@@ -6,7 +6,7 @@ cd ~/nixos-config;
 case "$(uname -s)" in
   Darwin)
     nix build .\#darwinConfigurations.`hostname`.system
-    ./result/sw/bin/darwin-rebuild switch --flake .
+    sudo ./result/sw/bin/darwin-rebuild switch --flake .
   ;;
 
   Linux)
