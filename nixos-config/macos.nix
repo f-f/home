@@ -35,6 +35,7 @@ let
     "cardinal"
     "ckan-app"
     "claude"
+    "claude-code"
     "crossover"
     "discord"
     "dropbox"
@@ -71,6 +72,7 @@ let
     "spotify"
     "stats"
     "steam"
+    "steipete/tap/codexbar"
     "syncthing-app"
     "tailscale-app"
     "teensy"
@@ -90,7 +92,6 @@ let
     coreutils
     curl
     diff-so-fancy
-    diffoscope
     fd
     fq
     fzf
@@ -138,6 +139,7 @@ in
     substituters = [
       "https://cache.nixos.org"
       "https://cache.iog.io"
+      # "http://tiberius:6666"
     ];
     trusted-public-keys = [
       "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
@@ -219,6 +221,7 @@ in
       "acrogenesis/macchanger"
       "wader/tap"
       "qmk/qmk"
+      "steipete/tap"
     ];
     brews = brewPkgs;
     casks = brewCasks;
@@ -295,7 +298,7 @@ in
 
   };
 
-  fonts.packages = with pkgs; [
+  fonts.packages = with pkgs; with nerd-fonts; [
     fira-code
     font-awesome
     google-fonts
@@ -303,7 +306,29 @@ in
     recursive
     roboto
     roboto-mono
-  ] ++ (builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts));
+    # nerd fonts
+    zed-mono
+    ubuntu-sans
+    ubuntu-mono
+    ubuntu
+    tinos
+    space-mono
+    roboto-mono
+    proggy-clean-tt
+    monoid
+    meslo-lg
+    jetbrains-mono
+    inconsolata
+    hasklug
+    hack
+    fira-mono
+    fira-code
+    droid-sans-mono
+    dejavu-sans-mono
+    comic-shanns-mono
+    atkynson-mono
+    adwaita-mono
+  ];
 
   system.keyboard = {
     enableKeyMapping = true;
