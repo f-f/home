@@ -125,6 +125,7 @@
 /.zcompcache/
 /.zcompdump
 /.zcompdump.zwc
+/.zed_server
 /.zoom
 /.zynaddsubfx-bank-cache.xml
 /*.log
@@ -154,6 +155,8 @@
 /Steam/
 /Sync
 /vst/
+/factorio
+/starbound
 
 # GPG: just the conf
 !.gnupg/gpg.conf

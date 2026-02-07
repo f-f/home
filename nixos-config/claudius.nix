@@ -5,8 +5,11 @@ let secrets = "/home/fabrizio/nixos-config/secrets.sh";
   INPUT=$(</dev/stdin)
   echo "$INPUT" | grep "errors: No known data errors"
   ZFS_ERR=$?
+  echo "$INPUT" | grep "pool: system"
+  IS_SYSTEM_POOL=$?
   source ${secrets};
-  curl -fsS -m 10 --retry 5 --data-raw "$INPUT" https://hc-ping.com/$ZFS_TOKEN/$ZFS_ERR
+  if [ $IS_SYSTEM_POOL -eq 0 ]; then TOK=$ZFS_SYSTEM_TOKEN; else TOK=$ZFS_TANK_TOKEN; fi
+  curl -fsS -m 10 --retry 5 --data-raw "$INPUT" https://hc-ping.com/$TOK/$ZFS_ERR
   '';
     mkFolder = { path, devices, ...}:
       {
@@ -378,34 +381,6 @@ in
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILWBoYJ6BAQevcLwudr4yQCV6qdyMTrW8EYd/FZsD2/O fabrizio+claudius@tiberius"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDtNeH9zrRkxq+Be1PbdyvVhUcNIVVrLijeN/ct3HnhQ4W1qq8ixFyfUEiwCSsZvR4L1L/GVZZmwmi7TRqRsOVVfV54q7QAzTKgs6+tPZLDktsvORiNoPu1uONH8Lf8Cbvpdnx6fCl+z8VU2p5+myAF4FXVY4EX2m6TCKJnwdRuZsjZh98XveUf46vXFjMqNUIW9ueipCCoDAyIqX8V3TmjWgyHZ3rIxGExnXNFYPN4Wz4UNRYI2Da1DOtFqXgFpm+nxVqk6QziRnUpgIXkBL9QBPnJEfKywy7rHpQlDX6/f2imFjkNAZq5my22KSoeYTJZyAuCrCCHgpY/ljl8kbL5ZWvPCai7DYpTVRnqhQAey7FUaafMPC/pmD6QYrb566QEYgj1MNknPMnvEPSR2xFJAiCo95Ckz9OvRCMZ1MA/wmRDOtL5dxqJWjnDtbXFt2jy4zLfrPKYKua/K5GOPHwMIMMDGGkJriWTkmi4OqZK2yPyFyfIVHJOhZhl5OtyQTsRyTDK4tPPZ3h/G8Q2YvvK6rTSO3oJbCn8yYqoPe8rAlrmeOBhB89/s9fqiczCHNt2Yj2Lax+aARF3lasA4pmbAseIO+jgYsk8xHhytTE45rLQnSYz63YuycJXJFKIgyqIQxZ1Jxj2GbzzoWeRUFxCKW9qmMcx+QP22BTIvE5HuQ== fabrizio@caesar"
   ];
-
-  # FIXME: I guess we could deprecate duckdns
-  systemd.services.duckdns= {
-    enable = true;
-    description = "Ping DuckDNS";
-    after = [ "network.target" ];
-    path = with pkgs; [ bash curl ];
-    environment = {
-      SECRETS_LOCATION = secrets;
-    };
-    serviceConfig = {
-      Type = "oneshot";
-      User = "fabrizio";
-      Group = "fabrizio";
-      ExecStart = "/home/fabrizio/bin/duckdns";
-    };
-  };
-  systemd.timers.duckdns = {
-    enable = true;
-    description = "Ping DuckDNS";
-    wantedBy = [ "timers.target" ];
-    partOf = [ "duckdns.service" ];
-    timerConfig = {
-      OnBootSec = "10min";
-      OnUnitActiveSec = "20min";
-      Unit = "duckdns.service";
-    };
-  };
 
   system.stateVersion = "24.11";
 }
