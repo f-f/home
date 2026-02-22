@@ -1,4 +1,4 @@
-{ pkgs, hostname, ... }:
+{ lib, pkgs, hostname, ... }:
 let
   brewPkgs = [
     "autoconf"
@@ -18,6 +18,7 @@ let
     "pandoc"
     "pinentry-mac"
     "qmk/qmk/qmk"
+    "ticket"
     "virt-manager"
     "virt-viewer"
     "yt-dlp"
@@ -83,6 +84,7 @@ let
     "wireshark-app"
     "xld"
     "xournal++"
+    "zed"
     "zoom"
   ];
   nixPkgs = with pkgs; [
@@ -190,10 +192,18 @@ in
 
       # Things that are run only on the desktop, such as Ollama for code completion,
       # and various iCloud -> Syncthing backups
+      heartbeatTokenVar = "HEARTBEAT_${lib.toUpper hostname}_TOKEN";
       tiberiusScripts = if hostname == "tiberius" then
         {
           obsidianBackup = runScriptDaily "obsidian-backup";
           keepassBackup = runScriptHourly "keepass-backup";
+          heartbeat = {
+            script = ''
+              source ${secrets}
+              curl -fsS -m 10 --retry 3 "https://hc-ping.com/''${${heartbeatTokenVar}}"
+            '';
+            serviceConfig = runEvery 300 "heartbeat";
+          };
           # ollama-serve = {
           #   environment = { OLLAMA_HOST = "0.0.0.0:11434"; };
           #   command = "${pkgs.ollama}/bin/ollama serve";
@@ -222,6 +232,7 @@ in
       "wader/tap"
       "qmk/qmk"
       "steipete/tap"
+      "wedow/tools"
     ];
     brews = brewPkgs;
     casks = brewCasks;

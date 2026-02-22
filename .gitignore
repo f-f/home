@@ -12,7 +12,7 @@
 /.cargo/
 /.cert/
 /.CFUserTextEncoding
-/.claude*
+/.claude.json*
 /.clojure/
 /.compose-cache/
 /.config/

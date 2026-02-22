@@ -1,6 +1,13 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 let secrets = "/home/fabrizio/nixos-config/secrets.sh";
+    zfsNotifyCmd = pkgs.writeShellScript "zfsNotify.sh" ''
+  INPUT=$(</dev/stdin)
+  echo "$INPUT" | grep "errors: No known data errors"
+  ZFS_ERR=$?
+  source ${secrets};
+  curl -fsS -m 10 --retry 5 --data-raw "$INPUT" https://hc-ping.com/$ZFS_DOMITIAN_TOKEN/$ZFS_ERR
+  '';
     mkFolder = { path, devices, ...}:
       {
         path = path;
@@ -62,12 +69,12 @@ in
       enable = true;
       interval = "Fri *-*-* 11:11:11";
     };
-  #   zed.settings = {
-  #     ZED_EMAIL_ADDR = [ "root" ];
-  #     ZED_EMAIL_PROG = zfsNotifyCmd.outPath;
-  #     ZED_NOTIFY_VERBOSE = true;
-  #     ZED_SCRUB_AFTER_RESILVER = true;
-  #   };
+    zed.settings = {
+      ZED_EMAIL_ADDR = [ "root" ];
+      ZED_EMAIL_PROG = zfsNotifyCmd.outPath;
+      ZED_NOTIFY_VERBOSE = true;
+      ZED_SCRUB_AFTER_RESILVER = true;
+    };
   };
 
   # VPN

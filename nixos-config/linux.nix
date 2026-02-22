@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  secrets = "/home/fabrizio/nixos-config/secrets.sh";
+  heartbeatTokenVar = "HEARTBEAT_${lib.toUpper config.networking.hostName}_TOKEN";
+in
 {
   imports =
     [
@@ -69,4 +73,30 @@
 
   # Passwordless sudo
   security.sudo.wheelNeedsPassword = false;
+
+  # Heartbeat ping to Healthchecks
+  systemd.services.heartbeat = {
+    description = "Heartbeat ping to Healthchecks";
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+    path = with pkgs; [ curl ];
+    serviceConfig = {
+      Type = "oneshot";
+      User = "fabrizio";
+      Group = "fabrizio";
+    };
+    script = ''
+      source ${secrets}
+      curl -fsS -m 10 --retry 3 "https://hc-ping.com/''${${heartbeatTokenVar}}"
+    '';
+  };
+  systemd.timers.heartbeat = {
+    description = "Heartbeat ping to Healthchecks";
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "2min";
+      OnUnitActiveSec = "5min";
+      Unit = "heartbeat.service";
+    };
+  };
 }
