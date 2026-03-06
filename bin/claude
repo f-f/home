@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Wrapper to switch Claude config based on working directory.
+# - Inside ~/code/iog → use work account config
+# - Everywhere else  → use default (personal) config
+
+IOG_PREFIX="$HOME/code/iog"
+
+case "$PWD" in
+  "$IOG_PREFIX"|"$IOG_PREFIX"/*)
+    export CLAUDE_CONFIG_DIR="$IOG_PREFIX/.claude"
+    ;;
+esac
+
+exec /opt/homebrew/bin/claude "$@"
