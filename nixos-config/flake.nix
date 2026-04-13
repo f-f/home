@@ -60,6 +60,12 @@
       modules = [
         home-manager.darwinModules.home-manager
         ./macos.nix
+        # Fish tests are broken for direnv 🤷
+        {
+          nixpkgs.overlays = [(final: prev: {
+            direnv = prev.direnv.overrideAttrs (old: { doCheck = false; });
+          })];
+         }
       ];
     };
   };

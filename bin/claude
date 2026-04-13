@@ -6,10 +6,12 @@
 
 IOG_PREFIX="$HOME/code/iog"
 
-case "$PWD" in
-  "$IOG_PREFIX"|"$IOG_PREFIX"/*)
-    export CLAUDE_CONFIG_DIR="$IOG_PREFIX/.claude"
-    ;;
-esac
+if [[ -z "${CLAUDE_PERSONAL:-}" ]]; then
+  case "$PWD" in
+    "$IOG_PREFIX"|"$IOG_PREFIX"/*)
+      export CLAUDE_CONFIG_DIR="$IOG_PREFIX/.claude"
+      ;;
+  esac
+fi
 
 exec /opt/homebrew/bin/claude "$@"
