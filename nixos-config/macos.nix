@@ -10,6 +10,7 @@ let
     "fileicon"
     "gnu-tar"
     "magic-wormhole"
+    "llama.cpp"
     "libvirt"
     "libusb"
     "macchanger"
@@ -27,7 +28,7 @@ let
     "affinity"
     "aldente"
     "arduino"
-    "audacity"
+    "autodesk-fusion"
     "balenaetcher"
     "basictex"
     "bluesnooze"
@@ -35,15 +36,12 @@ let
     "calibre"
     "cardinal"
     "ckan-app"
-    "claude"
     "claude-code"
     "crossover"
     "discord"
     "dropbox"
-    "easyeda"
     "firefox"
     "fl-studio"
-    "gimp"
     "google-chrome"
     "inkscape"
     "imhex"
@@ -63,7 +61,6 @@ let
     "orbstack"
     "plugdata"
     "porting-kit"
-    "protonvpn"
     "raspberry-pi-imager"
     "rectangle"
     "shifty"
@@ -85,15 +82,16 @@ let
     "xld"
     "xournal++"
     "zed"
-    "zoom"
   ];
   nixPkgs = with pkgs; [
     arp-scan
     bat
+    cbor-diag
     clang
     coreutils
     curl
     diff-so-fancy
+    exiftool
     fd
     fq
     fzf

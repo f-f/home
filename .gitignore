@@ -185,3 +185,7 @@
 /.history
 /.zsh_sessions
 /.bash_sessions
+
+SAMPLES
+.codexbar
+.vscode-shared

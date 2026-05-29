@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+cbor2pretty.rb $1 | \
+    awk -v q="'" -v dq="\"" '
+BEGIN { a = 0 }
+
+/tag\(24\)/ {a = 1}
+
+/"/ {
+  if (a == 1)
+  { print $0;
+    spaces = match($0,/[^ ]|$/)-1;
+    cmd = "perl -E " q "say " dq " " dq " x " spaces q;
+    cmd | getline spacess;
+    close(cmd);
+    system("perl -e " q "print pack " dq "H*" dq ", " dq $1 dq q " \
+           | cbor2pretty.rb \
+           | sed " q "s/^/⭞" spacess "/g" q);
+    a = 0
+  }
+  else
+  {
+    print
+  };
+  next
+}
+
+{print}
+'

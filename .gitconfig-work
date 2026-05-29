@@ -6,3 +6,7 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+
+[diff "cbor"]
+    textconv = cbor2pretty
+    cachetextconv = true
