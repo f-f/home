@@ -13,6 +13,19 @@
   };
 
   outputs = { self, nixpkgs-linux, nixpkgs-darwin, nixpkgs-unstable, darwin, home-manager, ... }@inputs: {
+    nixosConfigurations.augustus = nixpkgs-linux.lib.nixosSystem rec {
+      system = "x86_64-linux";
+      modules = [
+        ./linux.nix
+        ./augustus.nix
+      ];
+      specialArgs = {
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
+    };
     nixosConfigurations.claudius = nixpkgs-linux.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [

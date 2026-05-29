@@ -80,7 +80,7 @@ function host_color {
 ## This is the secondary color, defaults to a nondescript blueish
 function host_color2 {
   case "${HOST}" in
-    augustus)  echo 75 ;;
+    augustus)  echo 118 ;; # limegreen
     caesar)    echo 75 ;;
     claudius)  echo 75 ;;
     domitian)  echo 75 ;;
