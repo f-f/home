@@ -81,6 +81,26 @@ in
     wantedBy = [ "network-pre.target" ];
   };
 
+  # ds4 inference server
+  systemd.services.ds4-server = {
+    description = "ds4 inference server";
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+    wantedBy = [ "multi-user.target" ];
+    environment = {
+      DS4_CUDA_COPY_MODEL = "1";
+    };
+    serviceConfig = {
+      Type = "simple";
+      User = "fabrizio";
+      Group = "fabrizio";
+      WorkingDirectory = "/home/fabrizio/code/ds4";
+      ExecStart = "/home/fabrizio/code/ds4/ds4-server --ctx 200000 --kv-disk-dir /tmp/ds4-kv --kv-disk-space-mb 8192 --host 0.0.0.0";
+      Restart = "on-failure";
+      RestartSec = "5s";
+    };
+  };
+
   users.users.fabrizio.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPDVCfpP3ViN5RB7EU4B8DFDsoh77uJY4rAXu2BbQjHg fabrizio+augustus@aurelius"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN5ixQn4AbqtDzlGTKAGP5kE0EAUBox1rKxmy080rnF9 fabrizio+augustus@tiberius"

@@ -15,6 +15,10 @@ in
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+    settings = {
+      trusted-users = [ "fabrizio" "root" ];
+      experimental-features = [ "nix-command" "flakes" ];
+    };
   };
 
   time.timeZone = "Europe/Helsinki";
