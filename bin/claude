@@ -14,4 +14,6 @@ if [[ -z "${CLAUDE_PERSONAL:-}" ]]; then
   esac
 fi
 
+export CLAUDE_CODE_DISABLE_MOUSE=1
+export CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1
 exec /opt/homebrew/bin/claude "$@"

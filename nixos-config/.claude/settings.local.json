@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:nix.dev)"
+      "WebFetch(domain:nix.dev)",
+      "Bash(brew list *)",
+      "Read(//nix/store/**)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(gh api *)"
     ]
   }
 }

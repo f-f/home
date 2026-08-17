@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+: "${REKORDBOX_BACKUP_TOKEN?Need to set REKORDBOX_BACKUP_TOKEN}"
+
+export HEALTHCHECKS_TOKEN=$REKORDBOX_BACKUP_TOKEN
+
+SRC="/Users/fabrizio/Library/Pioneer/rekordbox/"
+DEST="/Users/fabrizio/sync/DJ/rekordbox/"
+
+mkdir -p "${DEST}"
+
+rsync -avhP --delete "${SRC}" "${DEST}"
+
+echo "Rekordbox: backup completed successfully at $(date)"
+
+curl --retry 3 https://hc-ping.com/${HEALTHCHECKS_TOKEN}

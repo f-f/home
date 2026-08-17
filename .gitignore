@@ -189,3 +189,10 @@
 SAMPLES
 .codexbar
 .vscode-shared
+
+**/.claude/settings.local.json
+/.omp/
+/.homebrew/
+/.swiftpm/
+/.cmuxterm/
+/.copilot/

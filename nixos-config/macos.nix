@@ -8,20 +8,26 @@ let
     "glib"
     "pkg-config"
     "fileicon"
+    "flow-control"
     "gnu-tar"
+    "helix"
     "magic-wormhole"
     "llama.cpp"
     "libvirt"
     "libusb"
     "macchanger"
     "nicotine-plus"
+    "omp"
+    "opencode"
     "openocd"
     "pandoc"
     "pinentry-mac"
+    "poppler"
     "qmk/qmk/qmk"
     "ticket"
     "virt-manager"
     "virt-viewer"
+    "xcodegen"
     "yt-dlp"
   ];
   brewCasks = [
@@ -36,7 +42,9 @@ let
     "calibre"
     "cardinal"
     "ckan-app"
-    "claude-code"
+    "claude"
+    "claude-code@latest"
+    "cmux"
     "crossover"
     "discord"
     "dropbox"
@@ -63,6 +71,7 @@ let
     "porting-kit"
     "raspberry-pi-imager"
     "rectangle"
+    "rekordbox"
     "shifty"
     "slack"
     "sonos"
@@ -187,6 +196,7 @@ in
 
       runScriptDaily = runBinScript 86400;
       runScriptHourly = runBinScript 3600;
+      runScriptWeekly = runBinScript 604800;
 
       # Things that are run only on the desktop, such as Ollama for code completion,
       # and various iCloud -> Syncthing backups
@@ -209,29 +219,35 @@ in
           # };
         } else {};
 
+      aureliusScripts = if hostname == "aurelius" then
+        {
+          rekordboxBackup = runScriptWeekly "rekordbox-backup";
+        } else {};
+
     in {
       user.agents = {
         cleanupDownloads = runScriptDaily "cleanup-downloads";
-      } // tiberiusScripts;
+      } // tiberiusScripts // aureliusScripts;
     };
 
   homebrew = {
     enable = true;
     global.brewfile = true;
-    brewPrefix = "/opt/homebrew/bin";
+    prefix = "/opt/homebrew";
     onActivation = {
       autoUpdate = true;
       upgrade = false;
-      cleanup = "zap";
+      cleanup = "uninstall";
     };
     taps = [
-      "f-f/homebrew-virt-manager"
-      "acrogenesis/macchanger"
-      "wader/tap"
-      "qmk/qmk"
-      "steipete/tap"
-      "wedow/tools"
-    ];
+      { name = "f-f/homebrew-virt-manager"; trusted = true; }
+      { name = "acrogenesis/macchanger"; trusted = true; }
+      { name = "wader/tap"; trusted = true; }
+      { name = "qmk/qmk"; trusted = true; }
+      { name = "steipete/tap"; trusted = true; }
+      { name = "wedow/tools"; trusted = true; }
+      { name = "can1357/tap"; trusted = true; }
+   ];
     brews = brewPkgs;
     casks = brewCasks;
     masApps = {

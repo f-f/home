@@ -9,11 +9,17 @@
     "commit": "",
     "pr": ""
   },
+  "model": "claude-fable-5[1m]",
+  "workflowKeywordTriggerEnabled": false,
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "showClearContextOnPlanAccept": true,
   "autoUpdatesChannel": "stable",
-  "autoCompactEnabled": false
+  "tui": "default",
+  "autoCompactEnabled": false,
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  }
 }
