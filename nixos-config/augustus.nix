@@ -95,7 +95,7 @@ in
       User = "fabrizio";
       Group = "fabrizio";
       WorkingDirectory = "/home/fabrizio/code/ds4";
-      ExecStart = "/home/fabrizio/code/ds4/ds4-server --ctx 200000 --kv-disk-dir /tmp/ds4-kv --kv-disk-space-mb 8192 --host 0.0.0.0";
+      ExecStart = "/home/fabrizio/code/ds4/ds4-server --ctx 250000 --kv-disk-dir /tmp/ds4-kv --kv-disk-space-mb 131072 --kv-cache-cold-max-tokens 100000 --host 0.0.0.0";
       Restart = "on-failure";
       RestartSec = "5s";
     };
