@@ -21,6 +21,24 @@
         "type": "github"
       }
     },
+    "flake-parts": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib"
+      },
+      "locked": {
+        "lastModified": 1785627969,
+        "narHash": "sha256-4dtXQk/NMePegK/nWp5NSeuZKLATItOq61lpEvmXqGw=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "427bf4bd9435fdf21321c8cc628c24efc14c0f7a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -42,6 +60,27 @@
         "type": "github"
       }
     },
+    "llama-cpp": {
+      "inputs": {
+        "flake-parts": "flake-parts",
+        "nixpkgs": [
+          "nixpkgs-linux"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786967601,
+        "narHash": "sha256-11+T9XSnE3h8kt+VVJTRHEkobUcbtsMYEE5gOOAkaV0=",
+        "owner": "ggml-org",
+        "repo": "llama.cpp",
+        "rev": "805984d676d001b194b844e1573c245edb4dbb34",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ggml-org",
+        "repo": "llama.cpp",
+        "type": "github"
+      }
+    },
     "nixpkgs-darwin": {
       "locked": {
         "lastModified": 1784517550,
@@ -55,6 +94,21 @@
         "owner": "nixos",
         "ref": "nixpkgs-26.05-darwin",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-lib": {
+      "locked": {
+        "lastModified": 1785031560,
+        "narHash": "sha256-OmshNvn2vupOFpYinLUu+1Dnpu4n7Q5N3ggGVNHpkUI=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "0e79af5e3d4dcfcd676ab5ba3f95d2e3352e078c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
         "type": "github"
       }
     },
@@ -94,6 +148,7 @@
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
+        "llama-cpp": "llama-cpp",
         "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-linux": "nixpkgs-linux",
         "nixpkgs-unstable": "nixpkgs-unstable"

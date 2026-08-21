@@ -10,6 +10,9 @@
     # nix will normally use the nixpkgs defined in home-managers inputs, but we only want one copy
     darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    # tracks master; bump with `nix flake update llama-cpp`
+    llama-cpp.url = github:ggml-org/llama.cpp;
+    llama-cpp.inputs.nixpkgs.follows = "nixpkgs-linux";
   };
 
   outputs = { self, nixpkgs-linux, nixpkgs-darwin, nixpkgs-unstable, darwin, home-manager, ... }@inputs: {
@@ -18,6 +21,7 @@
       modules = [
         ./linux.nix
         ./augustus.nix
+        { nixpkgs.overlays = [ inputs.llama-cpp.overlays.default ]; }
       ];
       specialArgs = {
         pkgs-unstable = import nixpkgs-unstable {
