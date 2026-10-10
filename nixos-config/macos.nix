@@ -11,6 +11,7 @@ let
     "flow-control"
     "gnu-tar"
     "helix"
+    "iodine"
     "magic-wormhole"
     "llama.cpp"
     "libvirt"
