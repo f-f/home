@@ -42,9 +42,9 @@ let
     "calibre"
     "cardinal"
     "ckan-app"
-    "claude"
     "claude-code@latest"
     "cmux"
+    "codex"
     "crossover"
     "discord"
     "dropbox"
@@ -75,7 +75,6 @@ let
     "shifty"
     "slack"
     "sonos"
-    "splice"
     "spotify"
     "stats"
     "steam"
@@ -89,7 +88,6 @@ let
     "vlc"
     "wireshark-app"
     "xld"
-    "xournal++"
     "zed"
   ];
   nixPkgs = with pkgs; [
